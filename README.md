@@ -1,6 +1,6 @@
 # Feriados Brasileiros
 
-[PyPI](https://pypi.org/search/?q=feriados) | [GitHub](https://github.com/michelmetran/feriados)
+[PyPI](https://pypi.org/project/feriados-brasileiros) | [GitHub](https://github.com/michelmetran/feriados)
 
 <br>
 
@@ -97,5 +97,3 @@ print(df.head())
 1. Ajustar documentação
 2. Incluir o dia da semana!
 3. Implantar classe Calndario para pegar feriados de anos diversos
-
-
