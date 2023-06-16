@@ -1,0 +1,20 @@
+data,nome,feriado,tipo,obs
+2023-01-01,Confraternização Universal,True,Fixo,
+2023-01-25,Aniversário da Cidade de São Paulo,True,Fixo,Feriado Municipal
+2023-02-20,Carnaval (Segunda-feira),False,Móvel,No Brasil segunda de carnaval é feriado!!
+2023-02-21,Carnaval,True,Móvel,
+2023-02-22,Carnaval (Quarta de Cinzas),False,Móvel,Quarta de Cinzas!? Não é feriado!?
+2023-04-06,Endoenças,False,Móvel,Feriado apenas para algumas instituições
+2023-04-07,Sexta-feira Santa,True,Móvel,Também conhecida como Paixão de Cristo
+2023-04-09,Páscoa,True,,
+2023-04-21,Tiradentes,True,Fixo,
+2023-05-01,Dia do Trabalho,True,Fixo,
+2023-06-08,Corpus Christ,True,Móvel,
+2023-09-07,Independência do Brasil,True,Fixo,
+2023-10-12,Nossa Sra. Aparecida,True,Fixo,Padroeira do Brasil
+2023-11-02,Dia de Finados,True,Fixo,
+2023-11-15,Proclamação da República,True,Fixo,
+2023-11-20,Dia da Consciência Negra,False,Fixo,Feriado Municipal
+2023-12-24,Vérpera de Natal,False,Fixo,
+2023-12-25,Natal,True,Fixo,
+2023-12-31,Reveillon,False,Fixo,Não é feriado!?

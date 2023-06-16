@@ -1,0 +1,32 @@
+# https://packaging.python.org/guides/using-manifest-in/
+
+# Include
+include requirements.txt
+include LICENSE
+
+#
+#graft src # Add all files under directories src
+#graft data # Add all files under directories data
+
+# Remove all files under directories
+#prune test
+prune sp_bh_pcj_2020_2035/data/input
+prune sp_bh_pcj_2020_2035/data/output/gpkg
+prune sp_bh_pcj_2020_2035/data/output/geojson
+prune sp_bh_pcj_2020_2035/data/output/tab
+#recursive-include YourPackage/data/*.csv
+
+# Excluí
+exclude sp_bh_pcj_2020_2035/data/output/geo/uso*da*terra*-*poligonos.7z
+exclude sp_bh_pcj_2020_2035/data/output/geo/área*de*preservação*permanente*-*poligonos.7z
+exclude sp_bh_pcj_2020_2035/data/output/geo/inventario*florestal*2020*-*bacia*pcj*-*poligonos.7z
+#exclude */*/run.py
+#exclude */run.py
+
+#global-exclude run.py
+global-exclude *.gpkg
+
+# Excluí
+global-exclude __pycache__
+global-exclude *.py[cod] # The square brackets are for matching any one of the characters, so it matches .pyc, .pyo and .pyd
+global-exclude *.ipynb_checkpoints/
