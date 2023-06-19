@@ -2,8 +2,7 @@
 Feriados do Brasil
 """
 
-
-from datetime import date
+from datetime import date, datetime
 
 import numpy as np
 import pandas as pd
@@ -16,6 +15,7 @@ class Feriados:
 
     def __init__(self, ano, date_format='%d.%m.%Y'):
         # Variables
+        self._table = None
         self.ano = ano
         self.date_format = date_format
         self._temp = None
@@ -136,7 +136,7 @@ class Feriados:
         self.dt_reveillon = np.nan
 
         # Calculate Parameters
-        self._realizar_calculo()
+        # self._realizar_calculo()
 
     def _realizar_calculo(self):
         """
@@ -157,9 +157,10 @@ class Feriados:
             self.dia = res + 22
             self.mes = 3
 
-    def all(self):
+    def add_all(self):
         """
-        _summary_
+        Adiciona todos os feriados, com as descrições,
+        observações e atributos "padrão"
         """
 
         # Móveis
@@ -187,9 +188,15 @@ class Feriados:
 
     def table(self):
         """
-        _summary_
+        Cria uma tabela de Feriados, em formato pandas,
+        contendo os feriados adicionados individualmente,
+        ou total (com o método "all()").
 
-        :return: _description_
+        Apresenta diversas descrições e atributos que
+        podem ser customizadas caso o usuário optei por
+        adicioar os feriados indifidualmente.
+
+        :return: Tabela com Feriados
         :rtype: dataframe
         """
 
@@ -334,12 +341,18 @@ class Feriados:
         df = pd.DataFrame(list_feriados)
         df = df[pd.notna(df['data'])]
         df = df.sort_values(['data'], ascending=True)
+        df['data'] = pd.to_datetime(df['data'])
+        df['dia_semama'] = df['data'].dt.day_name(locale='PT')
         df = df.reset_index(drop=True)
-        return df
+        df = df[['data', 'dia_semama', 'nome', 'feriado', 'tipo', 'obs']]
+        self._table = df
+        return self._table
 
     def list(self):
         """
-        Summary
+        Cria uma lista de Feriados, em formato datetime,
+        contendo os feriados adicionados individualmente,
+        ou total (com o método "all()")
 
         :return: Lista dos Feriados
         :rtype: list
@@ -350,6 +363,7 @@ class Feriados:
 
         # Results
         list_feriados = [x for x in list_feriados if pd.notna(x)]
+        list_feriados = [datetime.date(x) for x in df['data']]
         print(f'Existe(m) {len(list_feriados)} feriado(s)')
         return list_feriados
 
@@ -366,6 +380,8 @@ class Feriados:
         :return: _description_
         :rtype: _type_
         """
+        # Calculate Parameters
+        self._realizar_calculo()
 
         # Atributos
         self.feriado_pascoa = feriado
@@ -377,10 +393,10 @@ class Feriados:
         return self.dt_pascoa
 
     def add_carnaval_ter(
-        self,
-        feriado=True,
-        nome='Carnaval',
-        obs='',
+            self,
+            feriado=True,
+            nome='Carnaval',
+            obs='',
     ):
         """
         _summary_
@@ -414,10 +430,10 @@ class Feriados:
         return self.dt_carnaval_ter
 
     def add_carnaval_seg(
-        self,
-        feriado=False,
-        nome='Carnaval (Segunda-feira)',
-        obs='No Brasil segunda de carnaval é feriado!!',
+            self,
+            feriado=False,
+            nome='Carnaval (Segunda-feira)',
+            obs='No Brasil segunda de carnaval é feriado!!',
     ):
         """
         _summary_
@@ -452,10 +468,10 @@ class Feriados:
         return self.dt_carnaval_seg
 
     def add_carnaval_qua(
-        self,
-        feriado=False,
-        nome='Carnaval (Quarta de Cinzas)',
-        obs='Quarta de Cinzas!? Não é feriado!?',
+            self,
+            feriado=False,
+            nome='Carnaval (Quarta de Cinzas)',
+            obs='Quarta de Cinzas!? Não é feriado!?',
     ):
         """
         _summary_
@@ -489,10 +505,10 @@ class Feriados:
         return self.dt_carnaval_qua
 
     def add_paixao_cristo(
-        self,
-        feriado=True,
-        nome='Sexta-feira Santa',
-        obs='Também conhecida como Paixão de Cristo',
+            self,
+            feriado=True,
+            nome='Sexta-feira Santa',
+            obs='Também conhecida como Paixão de Cristo',
     ):
         """
         _summary_
@@ -522,10 +538,10 @@ class Feriados:
         return self.dt_paixao_cristo
 
     def add_endoencas(
-        self,
-        feriado=False,
-        nome='Endoenças',
-        obs='Feriado apenas para algumas instituições',
+            self,
+            feriado=False,
+            nome='Endoenças',
+            obs='Feriado apenas para algumas instituições',
     ):
         """
         Summary
@@ -587,7 +603,7 @@ class Feriados:
         return self.dt_corpus_christ
 
     def add_confraternizacao(
-        self, feriado=True, nome='Confraternização Universal', obs=''
+            self, feriado=True, nome='Confraternização Universal', obs=''
     ):
         """
         _summary_
@@ -610,10 +626,10 @@ class Feriados:
         return self.dt_confraternizacao
 
     def add_aniversario_sao_paulo(
-        self,
-        feriado=True,
-        nome='Aniversário da Cidade de São Paulo',
-        obs='Feriado Municipal',
+            self,
+            feriado=True,
+            nome='Aniversário da Cidade de São Paulo',
+            obs='Feriado Municipal',
     ):
         """
         _summary_
@@ -678,7 +694,7 @@ class Feriados:
         return self.dt_aniversario
 
     def add_independencia(
-        self, feriado=True, nome='Independência do Brasil', obs=''
+            self, feriado=True, nome='Independência do Brasil', obs=''
     ):
         """
         _summary_
@@ -701,10 +717,10 @@ class Feriados:
         return self.dt_aniversario
 
     def add_padroeira(
-        self,
-        feriado=True,
-        nome='Nossa Sra. Aparecida',
-        obs='Padroeira do Brasil',
+            self,
+            feriado=True,
+            nome='Nossa Sra. Aparecida',
+            obs='Padroeira do Brasil',
     ):
         """
         _summary_
@@ -748,7 +764,7 @@ class Feriados:
         return self.dt_finados
 
     def add_proclamacao_republica(
-        self, feriado=True, nome='Proclamação da República', obs=''
+            self, feriado=True, nome='Proclamação da República', obs=''
     ):
         """
         _summary_
@@ -771,10 +787,10 @@ class Feriados:
         return self.dt_republica
 
     def add_consciencia_negra(
-        self,
-        feriado=False,
-        nome='Dia da Consciência Negra',
-        obs='Feriado Municipal',
+            self,
+            feriado=False,
+            nome='Dia da Consciência Negra',
+            obs='Feriado Municipal',
     ):
         """
         _summary_
@@ -839,7 +855,7 @@ class Feriados:
         return self.dt_natal
 
     def add_reveillon(
-        self, feriado=False, nome='Reveillon', obs='Não é feriado!?'
+            self, feriado=False, nome='Reveillon', obs='Não é feriado!?'
     ):
         """
         _summary_
@@ -860,6 +876,12 @@ class Feriados:
         self.obs_reveillon = obs
         self.dt_reveillon = date(self.ano, 12, 31)
         return self.dt_reveillon
+
+    def __repr__(self):
+        if self._table is None:
+            return f'Existe 0 feriados listados'
+        else:
+            return f'Existe {len(self._table)} feriados listados'
 
 
 if __name__ == '__main__':
@@ -894,7 +916,7 @@ if __name__ == '__main__':
 
     # Lista Todos
     feriados = Feriados(ano=2023)
-    feriados.all()
+    feriados.add_all()
 
     # Lista
     lista_feriados = feriados.list()
