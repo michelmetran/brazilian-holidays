@@ -4,6 +4,7 @@ data,dia_semama,nome,feriado,tipo,obs
 2023-02-20,Segunda-feira,Carnaval (seg),True,Móvel,
 2023-02-21,Terça-feira,Carnaval (ter),True,Móvel,
 2023-02-22,Quarta-feira,Carnaval (qua),True,Móvel,
+2023-04-02,Domingo,Domingo de Ramos,False,Móvel,
 2023-04-06,Quinta-feira,Endoenças,True,Móvel,
 2023-04-07,Sexta-feira,Sexta-feira Santa,True,Móvel,
 2023-04-09,Domingo,Páscoa,True,Móvel,

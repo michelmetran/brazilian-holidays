@@ -4,6 +4,16 @@
 
 <br>
 
+> _Adoro um feriado! Quem não gosta?!_
+
+Com objetivo de listar os feriados brasileiros, criei o pacote **feriados-brasileiros**, que permite criar uma tabela contendo todos os feriados de um determinado ano, bem como ajustar atributos conforme a necessidade.
+
+A opção por ajustar atributos se deve ao fato de que, nem sempre, um feriado em uma instituição também é feriado n'outra! Feriado de endoeças, por exemplo, é feriado em instituições do meio jurídico, enquanto muitos nem sabem que feriado é esse!
+
+É possível ajustar o nome dos feriados e até mesmo um campo de observações!
+
+<br>
+
 ---
 
 ## Como Instalar?!
@@ -31,7 +41,7 @@ from feriados_brasileiros import Feriados
 
 # Lista Todos dos Feriados de um determinado Ano
 feriados = Feriados(ano=2023)
-feriados.all()
+feriados.add_all()
 ```
 
 <br>
@@ -49,10 +59,10 @@ feriados = Feriados(ano=2023)
 # Feriados Móveis
 feriados.add_carnaval_seg(nome='Segundona de Carnaval!')
 feriados.add_carnaval_ter()
-feriados.add_carnaval_qua(obs='Diz que é feriado vai!')
-feriados.add_endoencas(obs='Endoenças?! Que isso!', feriado=False)
-feriados.add_paixao_cristo(nome='Sexta-feira Santa')
-feriados.add_pascoa(obs='Eu só quero chocolate!')
+feriados.add_carnaval_qua(obs='Entrada no serviço após as 14h!')
+feriados.add_endoencas(obs='Endoenças: é feriado isso?!', feriado=False)
+feriados.add_paixao_cristo(nome='Sexta-feira Santa', obs='Paixão de Cristo')
+feriados.add_pascoa(obs='Quero chocolate!!')
 feriados.add_corpus_christ()
 
 # Feriados Fixos
@@ -63,7 +73,7 @@ feriados.add_trabalho()
 feriados.add_independencia(obs='Independência ou Morte!')
 feriados.add_padroeira()
 feriados.add_finados()
-feriados.add_proclamacao_republica()
+feriados.add_proclamacao_republica(obs='Dia de ler sobre o arretado Ruy Barbosa!')
 feriados.add_consciencia_negra()
 feriados.add_vespera_natal(feriado=False)
 feriados.add_natal()
@@ -80,13 +90,23 @@ Seja qual for a opção escolhida para usar o programa, os resultados podem ser 
 
 ```python
 # Resultado em Lista
-lista_feriados = feriados.list()
+lista_feriados = feriados.create_list()
 print(lista_feriados)
 
 # Resultado em Tabela (mais informações)
-df = feriados.table()
+df = feriados.create_table()
 print(df.head())
 ```
+
+<br>
+
+---
+
+## Documentação
+
+- [UFRGS: **Cálculo do Dia da Páscoa**](https://www.inf.ufrgs.br/~cabral/Pascoa.html)
+- [Problemas e Teoremas: **Script em Python do algoritmo de O’Beirne para calcular a data da Páscoa**](https://problemasteoremas.wordpress.com/2010/02/17/script-em-python-do-algoritmo-de-obeirne-para-calcular-o-dia-e-o-mes-do-domingo-de-pascoa/)
+- [YouTube: **Problemas em Python 05 - Cálculo de Datas Móveis**](https://www.youtube.com/watch?v=wbM7YhfcSqs), de Fernando Anselmo. Metodologia que adotei para calcular os feriados móveis nesse projeto.
 
 <br>
 
@@ -95,5 +115,6 @@ print(df.head())
 ## _TODO_
 
 1. Ajustar documentação
-2. Incluir o dia da semana!
-3. Implantar classe Calndario para pegar feriados de anos diversos
+2. ~~Incluir o dia da semana!~~
+3. ~~Implantar classe Calendário para pegar feriados de anos diversos~~
+4. ~~Add domingo de ramos~~
