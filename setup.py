@@ -13,7 +13,7 @@ for line in open('requirements.txt', encoding='utf-8'):
     if not li.startswith('#'):
         requirements.append(line.rstrip())
 
-VERSION = (0, 0, 4)
+VERSION = (0, 0, 5)
 __version__ = '.'.join(map(str, VERSION))
 
 setup(

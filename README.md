@@ -57,7 +57,7 @@ Dentre os atributos existentes estão:
 from feriados_brasileiros import datas
 
 # Adiciona apenas um feriado de um determinado ano
-feriados = Feriados(ano=2023)
+feriados = datas.Feriados(ano=2023)
 feriados.add(nome='Sexta-feira Santa', nome_alternativo='Paixão de Cristo', obs='Também conhecido como Sexta-feira Santa')
 feriados
 ```
@@ -119,8 +119,8 @@ lista_feriados = feriados.create_list(tipo='datetime')
 print(lista_feriados)
 
 # Resultado em Tabela (mais informações)
-df = feriados.create_table()
-print(df.head())
+df_feriados = feriados.create_table()
+print(df_feriados.head())
 ```
 
 <br>
