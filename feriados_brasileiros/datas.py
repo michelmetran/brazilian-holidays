@@ -207,13 +207,16 @@ class Feriados:
 
         :param nome: Nome do feriado
         :type nome: string
-        :param nome_alternativo: Nome do feriado alternativo, caso queira ajustar o nome "padrão", defaults to None
+        :param nome_alternativo: Nome do feriado alternativo, caso queira
+        ajustar o nome "padrão", defaults to None
         :type nome_alternativo: string, optional
-        :param feriado: Define se é, ou não, feriado (True/False), defaults to None
+        :param feriado: Define se é, ou não, feriado (True/False),
+        defaults to None
         :type feriado: bool, optional
         :param obs: Acrescenta uma observação ao feriado, defaults to None
         :type obs: string, optional
-        :raises Warning: Avalia se o feriado solicitado consta na lista dos "feriados_disponiveis"
+        :raises Warning: Avalia se o feriado solicitado consta na
+          lista dos "feriados_disponiveis"
         :return: Retorna a data do feriado
         :rtype: date
         """

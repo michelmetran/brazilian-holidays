@@ -87,7 +87,7 @@ feriados
 
 ## _Custom_
 
-Também é possível adicioanr um feriado customizado.
+Também é possível adicionar um feriado customizado.
 
 ```python
 from feriados_brasileiros import datas
