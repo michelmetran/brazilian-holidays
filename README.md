@@ -30,18 +30,13 @@ pip3 install feriados-brasileiros
 
 A maneira mais simples é obter todos os feriados para um determinado ano. Dessa forma os atributos serão definidos por padrão.
 
-Dentre os atributos existentes estão:
-
-- `nome`: Nome do Feriado;
-- `feriado`: Indica se é feriado ou apenas uma data que usualmente "enforca-se", porém não é feriado formalmente;
-- `obs`: Campo para observações quaisquer;
-
 ```python
-from feriados_brasileiros import Feriados
+from feriados_brasileiros import datas
 
-# Lista Todos dos Feriados de um determinado Ano
-feriados = Feriados(ano=2023)
+# Adiciona todos os feriados de um determinado ano
+feriados = datas.Feriados(ano=2023)
 feriados.add_all()
+feriados
 ```
 
 <br>
@@ -50,34 +45,64 @@ feriados.add_all()
 
 ## Detalhes
 
-É possível usar a ferramenta de uma maneira mais customizada, onde é possível ajustar todos os atributos (`nome`, `feriado`, `obs`) para cada um dos feriados.
+É possível usar a ferramenta de uma maneira mais customizada, onde é possível ajustar todos os atributos para cada um dos feriados.
+
+Dentre os atributos existentes estão:
+
+- `nome_alternativo`: Nome do Feriado;
+- `feriado`: Indica se é feriado ou apenas uma data que usualmente "enforca-se", porém não é feriado formalmente (exemplo: véspera de natal e quarta-feira de cinzas);
+- `obs`: Campo para observações quaisquer;
 
 ```python
-# Lista Todos dos Feriados de um determinado Ano
+from feriados_brasileiros import datas
+
+# Adiciona apenas um feriado de um determinado ano
 feriados = Feriados(ano=2023)
+feriados.add(nome='Sexta-feira Santa', nome_alternativo='Paixão de Cristo', obs='Também conhecido como Sexta-feira Santa')
+feriados
+```
 
-# Feriados Móveis
-feriados.add_carnaval_seg(nome='Segundona de Carnaval!')
-feriados.add_carnaval_ter()
-feriados.add_carnaval_qua(obs='Entrada no serviço após as 14h!')
-feriados.add_endoencas(obs='Endoenças: é feriado isso?!', feriado=False)
-feriados.add_paixao_cristo(nome='Sexta-feira Santa', obs='Paixão de Cristo')
-feriados.add_pascoa(obs='Quero chocolate!!')
-feriados.add_corpus_christ()
+<br>
 
-# Feriados Fixos
-feriados.add_confraternizacao()
-feriados.add_aniversario_sao_paulo(feriado=False)
-feriados.add_tiradentes()
-feriados.add_trabalho()
-feriados.add_independencia(obs='Independência ou Morte!')
-feriados.add_padroeira()
-feriados.add_finados()
-feriados.add_proclamacao_republica(obs='Dia de ler sobre o arretado Ruy Barbosa!')
-feriados.add_consciencia_negra()
-feriados.add_vespera_natal(feriado=False)
-feriados.add_natal()
-feriados.add_reveillon(feriado=False)
+---
+
+## Remoção
+
+É possível remover feriados específicos, após ter adicionado todos!.
+
+```python
+from feriados_brasileiros import datas
+
+# Adiciona todos os feriados de um determinado ano
+feriados = datas.Feriados(ano=2023)
+feriados.add_all()
+feriados.remove('Domingo de Ramos')
+feriados.remove('Endoenças')
+feriados
+```
+
+<br>
+
+---
+
+## _Custom_
+
+Também é possível adicioanr um feriado customizado.
+
+```python
+from feriados_brasileiros import datas
+
+# Adiciona todos os feriados de um determinado ano, além de outras feriados customizados (municipais e estaduais, por exemplo)
+feriados = datas.Feriados(ano=2023)
+feriados.add_all()
+feriados.add_custom(
+    nome='Dia do Servidor Público',
+    mes=10,
+    dia=28,
+    feriado=True,
+    tipo='Fixo',
+)
+feriados
 ```
 
 <br>
@@ -90,7 +115,7 @@ Seja qual for a opção escolhida para usar o programa, os resultados podem ser 
 
 ```python
 # Resultado em Lista
-lista_feriados = feriados.create_list()
+lista_feriados = feriados.create_list(tipo='datetime')
 print(lista_feriados)
 
 # Resultado em Tabela (mais informações)
@@ -114,7 +139,7 @@ print(df.head())
 
 ## _TODO_
 
-1. Ajustar documentação
+1. ~~Ajustar documentação~~
 2. ~~Incluir o dia da semana!~~
 3. ~~Implantar classe Calendário para pegar feriados de anos diversos~~
 4. ~~Add domingo de ramos~~

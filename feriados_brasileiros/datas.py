@@ -41,56 +41,56 @@ class Feriados:
                 'nome_alternativo': None,
                 'feriado': True,
                 'tipo': 'Móvel',
-                'obs': None,
+                'obs': '',
             },
             'Carnaval (ter)': {
                 'data': dt_carnaval_ter,
                 'nome_alternativo': None,
                 'feriado': True,
                 'tipo': 'Móvel',
-                'obs': None,
+                'obs': '',
             },
             'Carnaval (qua)': {
                 'data': dt_carnaval_qua,
                 'nome_alternativo': None,
                 'feriado': True,
                 'tipo': 'Móvel',
-                'obs': None,
+                'obs': '',
             },
             'Domingo de Ramos': {
                 'data': dt_dom_ramos,
                 'nome_alternativo': None,
                 'feriado': False,
                 'tipo': 'Móvel',
-                'obs': None,
+                'obs': '',
             },
             'Páscoa': {
                 'data': dt_pascoa,
                 'nome_alternativo': None,
                 'feriado': True,
                 'tipo': 'Móvel',
-                'obs': None,
+                'obs': '',
             },
             'Sexta-feira Santa': {
                 'data': dt_paixao_cristo,
                 'nome_alternativo': None,
                 'feriado': True,
                 'tipo': 'Móvel',
-                'obs': None,
+                'obs': '',
             },
             'Endoenças': {
                 'data': dt_endoencas,
                 'nome_alternativo': None,
                 'feriado': True,
                 'tipo': 'Móvel',
-                'obs': None,
+                'obs': '',
             },
             'Corpus Christ': {
                 'data': dt_corpus_christ,
                 'nome_alternativo': None,
                 'feriado': True,
                 'tipo': 'Móvel',
-                'obs': None,
+                'obs': '',
             },
             # Fixo
             'Confraternização Universal': {
@@ -98,84 +98,84 @@ class Feriados:
                 'nome_alternativo': None,
                 'feriado': True,
                 'tipo': 'Fixo',
-                'obs': None,
+                'obs': '',
             },
             'Aniversário da Cidade de São Paulo': {
                 'data': date(self.ano, 1, 25),
                 'nome_alternativo': None,
                 'feriado': True,
                 'tipo': 'Fixo',
-                'obs': None,
+                'obs': '',
             },
             'Tiradentes': {
                 'data': date(self.ano, 4, 21),
                 'nome_alternativo': None,
                 'feriado': True,
                 'tipo': 'Fixo',
-                'obs': None,
+                'obs': '',
             },
             'Dia do Trabalho': {
                 'data': date(self.ano, 5, 1),
                 'nome_alternativo': None,
                 'feriado': True,
                 'tipo': 'Fixo',
-                'obs': None,
+                'obs': '',
             },
             'Independência do Brasil': {
                 'data': date(self.ano, 9, 7),
                 'nome_alternativo': None,
                 'feriado': True,
                 'tipo': 'Fixo',
-                'obs': None,
+                'obs': '',
             },
             'Dia de Nossa Senhora Aparecida': {
                 'data': date(self.ano, 10, 12),
                 'nome_alternativo': None,
                 'feriado': True,
                 'tipo': 'Fixo',
-                'obs': None,
+                'obs': '',
             },
             'Dia de Finados': {
                 'data': date(self.ano, 11, 2),
                 'nome_alternativo': None,
                 'feriado': True,
                 'tipo': 'Fixo',
-                'obs': None,
+                'obs': '',
             },
             'Proclamação da República': {
                 'data': date(self.ano, 11, 15),
                 'nome_alternativo': None,
                 'feriado': True,
                 'tipo': 'Fixo',
-                'obs': None,
+                'obs': '',
             },
             'Dia da Consciência Negra': {
                 'data': date(self.ano, 11, 20),
                 'nome_alternativo': None,
                 'feriado': True,
                 'tipo': 'Fixo',
-                'obs': None,
+                'obs': '',
             },
             'Véspera de Natal': {
                 'data': date(self.ano, 12, 24),
                 'nome_alternativo': None,
                 'feriado': True,
                 'tipo': 'Fixo',
-                'obs': None,
+                'obs': '',
             },
             'Natal': {
                 'data': date(self.ano, 12, 25),
                 'nome_alternativo': None,
                 'feriado': True,
                 'tipo': 'Fixo',
-                'obs': None,
+                'obs': '',
             },
             'Reveillon': {
                 'data': date(self.ano, 12, 31),
                 'nome_alternativo': None,
                 'feriado': True,
                 'tipo': 'Fixo',
-                'obs': None,
+                'obs': '',
             },
         }
         #
@@ -201,79 +201,23 @@ class Feriados:
             self.dia = res + 22
             self.mes = 3
 
-    def add_all(self):
+    def add(self, nome, nome_alternativo=None, feriado=None, obs=''):
         """
-        Adiciona todos os feriados, com as descrições,
-        observações e atributos "padrão"
+        Adiciona feriado
+
+        :param nome: Nome do feriado
+        :type nome: string
+        :param nome_alternativo: Nome do feriado alternativo, caso queira ajustar o nome "padrão", defaults to None
+        :type nome_alternativo: string, optional
+        :param feriado: Define se é, ou não, feriado (True/False), defaults to None
+        :type feriado: bool, optional
+        :param obs: Acrescenta uma observação ao feriado, defaults to None
+        :type obs: string, optional
+        :raises Warning: Avalia se o feriado solicitado consta na lista dos "feriados_disponiveis"
+        :return: Retorna a data do feriado
+        :rtype: date
         """
-        for feriado in self.feriados_disponiveis:
-            self.add(nome=feriado)
 
-    def create_table(self):
-        """
-        Cria uma tabela de Feriados, em formato pandas,
-        contendo os feriados adicionados individualmente,
-        ou total (com o método "add_all()").
-
-        Apresenta diversas descrições e atributos que
-        podem ser customizadas caso o usuário optei por
-        adicionar os feriados individualmente.
-
-        :return: Tabela com Feriados
-        :rtype: dataframe
-        """
-        # Adjust Table
-        if len(self.dict_feriados_solicitados) == 0:
-            raise Warning('Necessário Adicionar feriados!')
-
-        dataframe = pd.DataFrame.from_dict(
-            self.dict_feriados_solicitados, orient='index'
-        )
-        # df = df[pd.notna(df['data'])]
-        dataframe = dataframe.sort_values(['data'], ascending=True)
-        dataframe['data'] = pd.to_datetime(dataframe['data'])
-        dataframe['dia_semama'] = df['data'].dt.day_name(locale='PT')
-        dataframe = dataframe.reset_index(drop=True)
-        dataframe = dataframe.rename({'nome_alternativo': 'nome'}, axis=1)
-        dataframe = dataframe[
-            ['data', 'dia_semama', 'nome', 'feriado', 'tipo', 'obs']
-        ]
-        return dataframe
-
-    def create_list(self):
-        """
-        Cria uma lista de Feriados, em formato datetime,
-        contendo os feriados adicionados individualmente,
-        ou total (com o método "all()")
-
-        :return: Lista dos Feriados
-        :rtype: list
-        """
-        # Cria Tabela
-        df = self.create_table()
-        list_feriados = list(df['data'])
-
-        # Results
-        list_feriados = [x for x in list_feriados if pd.notna(x)]
-        list_feriados = [datetime.date(x) for x in df['data']]
-        return list_feriados
-
-    def add(self, nome, nome_alternativo=None, feriado=None, obs=None):
-        """
-        _summary_
-
-        :param nome: _description_
-        :type nome: _type_
-        :param nome_alternativo: _description_, defaults to None
-        :type nome_alternativo: _type_, optional
-        :param feriado: _description_, defaults to None
-        :type feriado: _type_, optional
-        :param obs: _description_, defaults to None
-        :type obs: _type_, optional
-        :raises Warning: _description_
-        :return: _description_
-        :rtype: _type_
-        """
         if nome not in self.feriados_disponiveis:
             fer = '\n'.join(self.feriados_disponiveis)
             raise Warning(
@@ -310,44 +254,44 @@ class Feriados:
         # Results
         return self.dict_tipo[nome]['data']
 
-    def remove(self, nome):
+    def add_all(self):
         """
-        Summary
-
-        :param nome: _description_
-        :type nome: _type_
-        :raises Warning: _description_
-        :return: _description_
-        :rtype: _type_
+        Adiciona todos os feriados, com as descrições,
+        observações e atributos "padrão"
         """
-        if nome not in self.feriados_disponiveis:
-            fer = '\n'.join(self.feriados_disponiveis)
-            raise Warning(
-                f'O feriado precisa ser um dos listados abaixo\n{fer}'
-            )
-        # Feriados Solicitados
-        dict_temp = self.dict_feriados_solicitados
-        feriado_del = dict_temp.pop(nome)
-        self.dict_feriados_solicitados = dict_temp
-        return feriado_del['data']
+        for feriado in self.feriados_disponiveis:
+            self.add(nome=feriado)
 
     def add_custom(self, nome, mes, dia, feriado, tipo, obs=None):
         """
-        _summary_
+        Adiciona um feriado "customizado".
+        Ideal para feriados municipais,
+        não disponíveis no atributo "feriados_disponiveis"
 
-        :param nome: _description_
-        :type nome: _type_
-        :param data: _description_
-        :type data: _type_
-        :param feriado: _description_
-        :type feriado: _type_
-        :param tipo: _description_
-        :type tipo: _type_
-        :param obs: _description_, defaults to None
-        :type obs: _type_, optional
-        :return: _description_
-        :rtype: _type_
+        :param nome: Nome do feriado
+        :type nome: string
+        :param mes: Número do mês do feriado
+        :type mes: int
+        :param dia: Número do dia do feriado
+        :type dia: int
+        :param feriado: Define se é, ou não, feriado (True/False)
+        :type feriado: bool
+        :param tipo: tipo "Fixo" ou "Móvel"
+        :type tipo: string
+        :param obs: Acrescenta uma observação ao feriado, defaults to None
+        :type obs: string, optional
+        :return: Retorna a data do feriado
+        :rtype: date
         """
+        if mes not in range(1, 13):
+            raise Warning('Mês precisa ser menor que 12')
+
+        if dia not in range(1, 31):
+            raise Warning('Dia precisa ser menor que 31')
+
+        if tipo not in ['Fixo', 'Móvel']:
+            raise Warning('O feriado precisa ser do tipo "Fixo" ou "Móvel"')
+
         data = date(self.ano, mes, dia)
 
         # Cria Dicionário
@@ -367,25 +311,119 @@ class Feriados:
         self.dict_feriados_solicitados = dict_temp
         return data
 
+    def remove(self, nome):
+        """
+        Excluí feriado do objeto "Feraidos".
+        Ideal quando se utiliza a função "add_all", para adicionar todos,
+        sendo possível remover um ou outro feriado.
+
+        :param nome: Nome do feriado
+        :type nome: string
+        :raises Warning: Nome do feriado precisa ser um item dos
+        "feriados_disponiveis".
+        :return: Data do feriado removido do objeto "Feriados"
+        :rtype: date
+        """
+        if nome not in self.feriados_disponiveis:
+            fer = '\n'.join(self.feriados_disponiveis)
+            raise Warning(
+                f'O feriado precisa ser um dos listados abaixo\n{fer}'
+            )
+        # Feriados Solicitados
+        dict_temp = self.dict_feriados_solicitados
+        feriado_del = dict_temp.pop(nome)
+        self.dict_feriados_solicitados = dict_temp
+        return feriado_del['data']
+
+    def create_table(self):
+        """
+        Cria uma tabela de Feriados, em formato "pandas",
+        contendo os feriados adicionados individualmente,
+        ou total (com o método "add_all()").
+
+        Apresenta diversas descrições e atributos que
+        podem ser customizadas caso o usuário optei por
+        adicionar os feriados individualmente.
+
+        :return: Tabela com Feriados
+        :rtype: dataframe
+        """
+        # Adjust Table
+        if len(self.dict_feriados_solicitados) == 0:
+            raise Warning('Necessário Adicionar feriados!')
+
+        dataframe = pd.DataFrame.from_dict(
+            self.dict_feriados_solicitados, orient='index'
+        )
+        # df = df[pd.notna(df['data'])]
+        df = dataframe.sort_values(['data'], ascending=True)
+        df['data'] = pd.to_datetime(df['data'])
+        df['dia_semama'] = df['data'].dt.day_name(locale='PT')
+        df = df.reset_index(drop=True)
+        df = df.rename({'nome_alternativo': 'nome'}, axis=1)
+        df = df[['data', 'dia_semama', 'nome', 'feriado', 'tipo', 'obs']]
+        return df
+
+    def create_list(self, tipo='datetime'):
+        """
+        Cria uma lista de Feriados, em formato "date" ou "datetime",
+        contendo os feriados adicionados individualmente,
+        ou total (com o método "add_all").
+
+        Ideal para utilizar com a biblioteca "dateutil".
+
+        :param tipo: Tipo de lista, defaults to "datetime"
+        :type tipo: str, optional
+        :raises Warning: Lista precisa ser "date" ou "datetime"
+        :return: Lista dos Feriados
+        :rtype: list
+        """
+
+        if tipo not in ['date', 'datetime']:
+            raise Warning(
+                'É necessário que o formato seja "date" ou "datetime"!'
+            )
+
+        # Cria Tabela
+        df = self.create_table()
+
+        # sss
+        if tipo == 'date':
+            return [datetime.date(x) for x in df['data']]
+
+        elif tipo == 'datetime':
+            return [
+                datetime(
+                    year=x.year,
+                    month=x.month,
+                    day=x.day,
+                    hour=0,
+                    minute=0,
+                    second=0,
+                )
+                for x in df['data']
+            ]
+
     def next_feriado(self):
         """
-        _summary_
+        Define quando é o próximo feriado,
+        a partir do dia de hoje!
 
-        :return: _description_
-        :rtype: _type_
+        :return: Dia do próximo feriado
+        :rtype: date
         """
         # Pega dia de hoje
-        pivot = date.today()
-        items = self.create_list()
+        data = date.today()
+        items = self.create_list(tipo='date')
 
         # Lista de Datas
         list_res = []
         for x in items:
-            list_res.append((x - pivot).days)
+            list_res.append((x - data).days)
 
         # ddd
         n_days_holiday = min(n for n in list_res if n > 0)
-        return pivot + timedelta(days=n_days_holiday)
+        return data + timedelta(days=n_days_holiday)
 
     def __repr__(self):
         if len(self.dict_feriados_solicitados) == 0:
@@ -405,7 +443,6 @@ class Calendario:
 
     def __init__(self):
         self.tabelas_feriados = None
-        # self.df = None
         pass
 
     def create_table(self, tabelas_feriados):
@@ -441,22 +478,44 @@ class Calendario:
         # self.df = df
         return df
 
-    def create_list(self):
+    def create_list(self, tipo='datetime'):
         """
         Cria uma lista de Feriados, em formato datetime,
         contendo os feriados adicionados individualmente,
         ou total (com o método "all()")
 
+        :param tipo: Tipo de lista, defaults to 'datetime'
+        :type tipo: str, optional
+        :raises Warning: Lista precisa ser 'date' ou 'datetime'
         :return: Lista dos Feriados
         :rtype: list
         """
+        if tipo not in ['date', 'datetime']:
+            raise Warning(
+                'É necessário que o formato seja "date" ou "datetime"!'
+            )
+
         # Cria Tabela
         df = self.create_table(self.tabelas_feriados)
-        list_feriados = list(df['data'])
+
+        # Tipos
+        if tipo == 'date':
+            list_feriados = [datetime.date(x) for x in df['data']]
+
+        elif tipo == 'datetime':
+            list_feriados = [
+                datetime(
+                    year=x.year,
+                    month=x.month,
+                    day=x.day,
+                    hour=0,
+                    minute=0,
+                    second=0,
+                )
+                for x in df['data']
+            ]
 
         # Results
-        list_feriados = [x for x in list_feriados if pd.notna(x)]
-        list_feriados = [datetime.date(x) for x in df['data']]
         print(f'Existe(m) {len(list_feriados)} feriado(s)')
         return list_feriados
 
@@ -473,12 +532,12 @@ if __name__ == '__main__':
     feriados.add(nome='Natal')
     feriados.add_all()
 
-    # # Lista Todos
-    # feriados = Feriados(ano=2023)
-    # feriados.add_all()
+    # Lista Todos
+    feriados = Feriados(ano=2023)
+    feriados.add_all()
 
     # # Lista
-    lista_feriados = feriados.create_list()
+    lista_feriados = feriados.create_list(tipo='datetime')
     print(lista_feriados)
 
     # # Tabela
