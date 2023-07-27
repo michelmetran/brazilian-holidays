@@ -261,7 +261,9 @@ class Feriados:
         """
         Adiciona todos os feriados, com as descrições,
         observações e atributos "padrão"
+        :return:
         """
+
         for feriado in self.feriados_disponiveis:
             self.add(nome=feriado)
 

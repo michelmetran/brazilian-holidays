@@ -13,7 +13,7 @@ for line in open('requirements.txt', encoding='utf-8'):
     if not li.startswith('#'):
         requirements.append(line.rstrip())
 
-VERSION = (0, 0, 5)
+VERSION = (0, 0, 7)
 __version__ = '.'.join(map(str, VERSION))
 
 setup(
@@ -25,7 +25,7 @@ setup(
     long_description=long_description,
     long_description_content_type='text/markdown',
     url='https://github.com/michelmetran/feriados',
-    keywords='python, dados espaciais, geoprocessamento',
+    keywords='python, datas, feriados',
     # Python and Packages
     python_requires='>=3',
     install_requires=requirements,

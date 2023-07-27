@@ -68,7 +68,7 @@ feriados
 
 ## Remoção
 
-É possível remover feriados específicos, após ter adicionado todos!.
+É possível remover feriados específicos, após ter adicionado todos!
 
 ```python
 from feriados_brasileiros import datas
