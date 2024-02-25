@@ -10,7 +10,7 @@ import pandas as pd
 class Feriados:
     """
     Classe para manejar feriados brasileiros,
-    Sendo possível listar, adicionar, criar tabelas, alterar atributos etc.
+    Sendo possível listar, adicionar, criar tabelas, alterar atributos, etc.
     """
 
     def __init__(self, ano, date_format='%d.%m.%Y'):
@@ -318,7 +318,7 @@ class Feriados:
 
     def remove(self, nome):
         """
-        Excluí feriado do objeto "Feraidos".
+        Excluí feriado do objeto "Feriados".
         Ideal quando se utiliza a função "add_all", para adicionar todos,
         sendo possível remover um ou outro feriado.
 
@@ -363,10 +363,10 @@ class Feriados:
         # df = df[pd.notna(df['data'])]
         df = dataframe.sort_values(['data'], ascending=True)
         df['data'] = pd.to_datetime(df['data'])
-        df['dia_semama'] = df['data'].dt.day_name(locale='PT')
+        df['dia_semana'] = df['data'].dt.day_name(locale='PT')
         df = df.reset_index(drop=True)
         df = df.rename({'nome_alternativo': 'nome'}, axis=1)
-        df = df[['data', 'dia_semama', 'nome', 'feriado', 'tipo', 'obs']]
+        df = df[['data', 'dia_semana', 'nome', 'feriado', 'tipo', 'obs']]
         return df
 
     def create_list(self, tipo='datetime'):
