@@ -14,7 +14,12 @@ teste
 dsdsdsdsd
 
 
-https://michelmetran.com.br/feriados-brasileiros/
+- [ ] dffff
+- [ ] ffffff
+
+:snake:
+
+[ddd](https://michelmetran.com.br/feriados-brasileiros/)
 
 
 ## Project layout
@@ -23,3 +28,15 @@ https://michelmetran.com.br/feriados-brasileiros/
     docs/
         index.md  # The documentation homepage.
         ...       # Other markdown pages, images and other files.
+
+
+## dddd
+
+
+
+```{.python linenums="1" title="arquivo.py"}
+import os
+
+def fdfdfd():
+    return 1
+```
