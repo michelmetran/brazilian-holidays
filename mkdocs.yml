@@ -6,12 +6,23 @@ docs_dir: 'docs'
 # Opcional
 nav:
   - Home: index.md
-  - Dois: pages/docs.md
+  - Como Usar?: pages/usar.md
+  - Resultados: pages/results.md
+  - Referências: pages/refs.md
+  - Documentation:
+      - Docs: pages/docs.md
+      - Write: pages/write.md
 
 # Theme
 # Opcional
 # https://squidfunk.github.io/mkdocs-material/
 theme:
+  # Breadcrumbs
+  features:
+    - navigation.path
+    - toc.follow
+    #- toc.integrate
+
   name: material
   palette:
     # Palette toggle for automatic mode
@@ -48,5 +59,5 @@ markdown_extensions:
           class: mermaid
           format: !!python/name:pymdownx.superfences.fence_code_format
 
-# Referências
+          # Referências
 # https://github.com/facelessuser/pymdown-extensions/blob/main/docs/src/mkdocs.yml

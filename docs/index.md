@@ -1,44 +1,24 @@
-# Welcome to MkDocs
-
-For full documentation visit [mkdocs.org](https://www.mkdocs.org).
-
-sdfdsfdsfdsf
-
-## Commands
-
-* `mkdocs new [dir-name]` - Create a new project.
-* `mkdocs serve` - Start the live-reloading docs server.
-* `mkdocs build` - Build the documentation site.
-* `mkdocs -h` - Print help message and exit.
+# Brazilian Holidays
 
 
-teste
-dsdsdsdsd
+> _Adoro um feriado! Quem não gosta?!_
+
+Com objetivo de listar os feriados brasileiros, criei o pacote **feriados-brasileiros**, que permite criar uma tabela
+contendo todos os feriados de um determinado ano, bem como ajustar atributos conforme a necessidade.
+
+A opção por ajustar atributos se deve ao fato de que, nem sempre, um feriado em uma instituição também é feriado
+n'outra! Feriado de endoeças, por exemplo, é feriado em instituições do meio jurídico, enquanto muitos nem sabem que
+feriado é esse!
+
+É possível ajustar o nome dos feriados e até mesmo um campo de observações!
 
 
-- [ ] dffff
-- [ ] ffffff
+<br>
 
-:snake:
+---
 
-[ddd](https://michelmetran.com.br/feriados-brasileiros/)
+## Como Instalar?!
 
-
-## Project layout
-
-    mkdocs.yml    # The configuration file.
-    docs/
-        index.md  # The documentation homepage.
-        ...       # Other markdown pages, images and other files.
-
-
-## dddd
-
-
-
-```{.python linenums="1" title="arquivo.py"}
-import os
-
-def fdfdfd():
-    return 1
+```python
+pip3 install feriados-brasileiros
 ```

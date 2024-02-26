@@ -2,51 +2,52 @@
 
 ## MkDocs
 
-Teste 
 
+For full documentation visit [mkdocs.org](https://www.mkdocs.org).
+
+sdfdsfdsfdsf
+
+## Commands
+
+* `mkdocs new [dir-name]` - Create a new project.
+* `mkdocs serve` - Start the live-reloading docs server.
+* `mkdocs build` - Build the documentation site.
+* `mkdocs -h` - Print help message and exit.
+
+<br>
+
+
+## Project layout
+
+    mkdocs.yml    # The configuration file.
+    docs/
+        index.md  # The documentation homepage.
+        ...       # Other markdown pages, images and other files.
 
 
 <br>
 
 ------
+
+
+
+
 
 ## Read the Docs
 
-<br>
+It's necessary indicate the path of the file `.readthedocs.yml` in the advanced configurations.
 
-------
-
-## Diagramas
-
-Para fazer diagramas usando o meirmaid, 
-- https://squidfunk.github.io/mkdocs-material/reference/diagrams/
-
-
-Necessário usar o código no `mkdocs.yml`
-```
-markdown_extensions:
-  - pymdownx.emoji # Suporte a emojis
-  - pymdownx.tasklist # Suporte à tarefas
-  - pymdownx.mark # Marcado
-  - pymdownx.tilde  # Realçado
-  - pymdownx.highlight  # Código
-  - pymdownx.superfences:
-      custom_fences:
-        - name: mermaid
-          class: mermaid
-          format: !!python/name:pymdownx.superfences.fence_code_format
-
-```
+![readthedocs](https://i.imgur.com/f60yZU6.jpeg)
 
 <br>
 
-Dai ele renderiza abaixo
-``` mermaid
-graph LR
-  A[Start] --> B{Error?};
-  B -->|Yes| C[Hmm...];
-  C --> D[Debug];
-  D --> B;
-  B ---->|No| E[Yay!];
-```
+And it's necessary adjust the *Automation Rules*.  
+
+![automation](https://i.imgur.com/NlC0TLt.jpeg)
+
+
+
+<br>
+
+
 
