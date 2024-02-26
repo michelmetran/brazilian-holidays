@@ -1,5 +1,9 @@
 # dddd
 site_name: Brazilian Holidays
+
+# GitHub Repo Link
+repo_url: https://github.com/michelmetran/brazilian-holidays
+
 docs_dir: 'docs'
 
 # NavBar
@@ -13,6 +17,8 @@ nav:
       - Docs: pages/docs.md
       - Write: pages/write.md
 
+
+
 # Theme
 # Opcional
 # https://squidfunk.github.io/mkdocs-material/
@@ -22,6 +28,9 @@ theme:
     - navigation.path
     - toc.follow
     #- toc.integrate
+
+  icon:
+    repo: fontawesome/brands/github
 
   name: material
   palette:
@@ -59,5 +68,5 @@ markdown_extensions:
           class: mermaid
           format: !!python/name:pymdownx.superfences.fence_code_format
 
-          # Referências
-# https://github.com/facelessuser/pymdown-extensions/blob/main/docs/src/mkdocs.yml
+            # Referências
+          # https://github.com/facelessuser/pymdown-extensions/blob/main/docs/src/mkdocs.yml

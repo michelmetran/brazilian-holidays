@@ -20,3 +20,8 @@ indent_size = 4
 # Sobreescrever Geral
 [*.md]
 indent_size = 2
+
+
+# Sobreescrever Geral
+[*.yml]
+indent_size = 2
