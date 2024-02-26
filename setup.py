@@ -26,7 +26,7 @@ setup(
     long_description=long_description,
     long_description_content_type='text/markdown',
     url='https://github.com/michelmetran/feriados-brasileiros',
-    keywords='python, datas, feriados',
+    keywords='python, dates, holidays, brazil, feriados',
     # Python and Packages
     python_requires='>=3',
     install_requires=requirements,
