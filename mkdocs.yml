@@ -1,7 +1,6 @@
 # dddd
 site_name: Brazilian Holidays
-docs_dir: .
-site_dir: ../site
+docs_dir: 'docs'
 
 # NavBar
 # Opcional
