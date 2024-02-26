@@ -8,10 +8,11 @@ with open('README.md', 'r', encoding='utf-8') as f:
     long_description = f.read()
 
 requirements = []
-for line in open('requirements.txt', encoding='utf-8'):
-    li = line.strip()
-    if not li.startswith('#'):
-        requirements.append(line.rstrip())
+with open('requirements.md', 'r', encoding='utf-8') as f:
+    for line in f:
+        li = line.strip()
+        if not li.startswith('#'):
+            requirements.append(line.rstrip())
 
 VERSION = (0, 0, 9)
 __version__ = '.'.join(map(str, VERSION))
