@@ -1,9 +1,9 @@
 # Brazilian Holidays
 
-[![Repo](https://img.shields.io/badge/GitHub-repo-blue?logo=github&logoColor=f5f5f5)](https://github.com/michelmetran/feriados-brasileiros) 
+[![Repo](https://img.shields.io/badge/GitHub-repo-blue?logo=github&logoColor=f5f5f5)](https://github.com/michelmetran/brazilian-holidays)
 [![PyPI - Version](https://img.shields.io/pypi/v/feriados-brasileiros?logo=pypi&label=PyPI&color=blue)](https://pypi.org/project/brazilian-holidays/)\
-[![Read the Docs](https://img.shields.io/readthedocs/feriados-brasileiros?logo=ReadTheDocs&label=Read%20The%20Docs)](https://feriados-brasileiros.readthedocs.io/)
-[![Publish Python to PyPI](https://github.com/michelmetran/feriados-brasileiros/actions/workflows/publish-to-pypi.yml/badge.svg)](https://github.com/michelmetran/feriados-brasileiros/actions/workflows/publish-to-pypi.yml)
+[![Read the Docs](https://img.shields.io/readthedocs/feriados-brasileiros?logo=ReadTheDocs&label=Read%20The%20Docs)](https://brazilian-holidays.readthedocs.io/)
+[![Publish Python to PyPI](https://github.com/michelmetran/brazilian-holidays/actions/workflows/publish-to-pypi.yml/badge.svg)](https://github.com/michelmetran/brazilian-holidays/actions/workflows/publish-to-pypi.yml)
 
 <br>
 

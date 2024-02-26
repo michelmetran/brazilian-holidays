@@ -25,7 +25,7 @@ setup(
     description='Brazilian Holidays',
     long_description=long_description,
     long_description_content_type='text/markdown',
-    url='https://github.com/michelmetran/feriados-brasileiros',
+    url='https://github.com/michelmetran/brazilian-holidays',
     keywords='python, dates, holidays, brazil, feriados',
     # Python and Packages
     python_requires='>=3',
@@ -39,7 +39,7 @@ setup(
         'Intended Audience :: Developers',
     ],
     # Entry
-    # package_dir={'': 'sp_bh_pcj_2020_2035'},  # Our packages live under src but src is not a package itself
+
     # Quando são diversos módulos...
     packages=find_packages(),
     # Dados
