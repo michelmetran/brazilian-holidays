@@ -17,14 +17,14 @@ VERSION = (0, 0, 8)
 __version__ = '.'.join(map(str, VERSION))
 
 setup(
-    name='feriados_brasileiros',
+    name='brazilian_holidays',
     version=__version__,
     author='Michel Metran',
     author_email='michelmetran@gmail.com',
-    description='Feriados Brasileiros',
+    description='Brazilian Holidays',
     long_description=long_description,
     long_description_content_type='text/markdown',
-    url='https://github.com/michelmetran/feriados',
+    url='https://github.com/michelmetran/feriados-brasileiros',
     keywords='python, datas, feriados',
     # Python and Packages
     python_requires='>=3',

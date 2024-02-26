@@ -1,9 +1,11 @@
-# Feriados Brasileiros
+# Brazilian Holidays
 
-[PyPI](https://pypi.org/project/feriados-brasileiros) | [GitHub](https://github.com/michelmetran/feriados)
+[![Repo](https://img.shields.io/badge/GitHub-repo-blue?logo=github&logoColor=f5f5f5)](https://github.com/michelmetran/feriados-brasileiros) 
+![PyPI - Version](https://img.shields.io/pypi/v/feriados-brasileiros?logo=pypi&label=PyPI&color=blue)\
+![Read the Docs](https://img.shields.io/readthedocs/feriados-brasileiros?logo=ReadTheDocs&label=Read%20The%20Docs)
+[![Publish Python to PyPI](https://github.com/michelmetran/feriados-brasileiros/actions/workflows/publish-to-pypi.yml/badge.svg)](https://github.com/michelmetran/feriados-brasileiros/actions/workflows/publish-to-pypi.yml)
 
 <br>
-
 
 -----
 
