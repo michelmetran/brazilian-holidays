@@ -2,26 +2,14 @@ site_name: Brazilian Holidays
 
 # NavBar: Opcional!
 nav:
-  - home: index.md
+  - Home: index.md
   - Dois: pages/docs.md
-
 
 # Opcional
 # https://squidfunk.github.io/mkdocs-material/
-
-#  #name: mkdocs
-#  name: material
-#  palette:
-#    primary: deep purple # indigo, purple
-#
-
-
-
-
 theme:
   name: material
   palette:
-
     # Palette toggle for automatic mode
     - media: "(prefers-color-scheme)"
       toggle:
