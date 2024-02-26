@@ -5,14 +5,7 @@
 [![Read the Docs](https://img.shields.io/readthedocs/brazilian-holidays?logo=ReadTheDocs&label=Read%20The%20Docs)](https://brazilian-holidays.readthedocs.io/)
 [![Publish Python to PyPI](https://github.com/michelmetran/brazilian-holidays/actions/workflows/publish-to-pypi.yml/badge.svg)](https://github.com/michelmetran/brazilian-holidays/actions/workflows/publish-to-pypi.yml)
 
-ss
-
-
-
 <br>
-
-
-
 
 -----
 
