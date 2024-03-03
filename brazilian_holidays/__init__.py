@@ -3,5 +3,5 @@
 
 from brazilian_holidays.datas import Calendario, Holidays
 
-__version__ = '0.0.11'
+__version__ = '0.0.12'
 __author__ = 'Michel Metran'

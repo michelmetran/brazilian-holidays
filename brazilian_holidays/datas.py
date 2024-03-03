@@ -553,6 +553,8 @@ class Calendario:
 
 
 if __name__ == '__main__':
+    import pandas as pd
+
     import brazilian_holidays
 
     holidays_23 = brazilian_holidays.Holidays(year=2023)
@@ -565,8 +567,8 @@ if __name__ == '__main__':
     calendario = brazilian_holidays.Calendario()
     calendario.add(tabelas_feriados=holidays_23)
     calendario.add(tabelas_feriados=holidays_24)
-    #print(calendario)
-    #print(calendario.tabelas_feriados)
+    # print(calendario)
+    # print(calendario.tabelas_feriados)
 
     # Create Table
     df = calendario.create_table()
