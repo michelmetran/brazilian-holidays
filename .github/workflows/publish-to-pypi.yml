@@ -18,7 +18,7 @@ jobs:
       run: python -m pip install --upgrade pip
 
     - name: setuptools
-      run: pip install -U setuptools
+      run: pip install -U setuptools pandas
 
     - name: Install pypa/build
       run: >-
