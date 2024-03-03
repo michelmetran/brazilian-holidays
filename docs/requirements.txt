@@ -9,3 +9,5 @@ mkdocs-jupyter
 
 # Para adicionar icones no footer
 mkdocs-material[imaging]
+
+pandas
