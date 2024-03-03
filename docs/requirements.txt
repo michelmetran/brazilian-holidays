@@ -1,3 +1,11 @@
 mkdocs
 pymdown-extensions
 mkdocs-material
+
+
+# Para fazer documentação com auxílio do Jupyter
+# https://github.com/danielfrg/mkdocs-jupyter
+mkdocs-jupyter
+
+# Para adicionar icones no footer
+mkdocs-material[imaging]

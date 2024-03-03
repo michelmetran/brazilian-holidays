@@ -446,10 +446,26 @@ class Calendario:
     """
 
     def __init__(self):
-        self.tabelas_feriados = None
+        self.tabelas_feriados = []
         pass
 
-    def create_table(self, tabelas_feriados):
+    def add(self, tabelas_feriados):
+        """
+        _summary_
+
+        :param tabelas_feriados: _description_
+        :type tabelas_feriados: _type_
+        :raises Warning: _description_
+        """
+
+        if not isinstance(tabelas_feriados, Holidays):
+            raise Warning(
+                'Os itens da lista precisam ser objetos do tipo "Feriados"'
+            )
+
+        self.tabelas_feriados.append(tabelas_feriados.create_table())
+
+    def create_table(self):
         """
         _summary_
 
@@ -460,23 +476,23 @@ class Calendario:
         :return: _description_
         :rtype: _type_
         """
-        if not isinstance(tabelas_feriados, list):
-            raise Warning(
-                f'O parâmetro de input "tabelas_feriados" precisa ser uma lista!\nFoi passado uma {type(tabelas_feriados)}'
-            )
+        # if not isinstance(tabelas_feriados, list):
+        #     raise Warning(
+        #         f'O parâmetro de input "tabelas_feriados" precisa ser uma lista!\nFoi passado uma {type(tabelas_feriados)}'
+        #     )
 
-        for item in tabelas_feriados:
-            if not isinstance(item, Holidays):
-                raise Warning(
-                    'Os itens da lista precisam ser objetos do tipo "Feriados"'
-                )
-        self.tabelas_feriados = tabelas_feriados
+        # for item in tabelas_feriados:
+        #     if not isinstance(item, Holidays):
+        #         raise Warning(
+        #             'Os itens da lista precisam ser objetos do tipo "Feriados"'
+        #         )
+        # self.tabelas_feriados = tabelas_feriados
 
-        list_dfs = []
-        for feriado_table in tabelas_feriados:
-            list_dfs.append(feriado_table.create_table())
+        # list_dfs = []
+        # for feriado_table in self.tabelas_feriados:
+        #     list_dfs.append(feriado_table.create_table())
 
-        df = pd.concat(objs=list_dfs, ignore_index=True)
+        df = pd.concat(objs=self.tabelas_feriados, ignore_index=True)
         df = df.sort_values(['date'], ascending=True)
         df = df.reset_index(drop=True)
         # self.df = df
@@ -500,7 +516,7 @@ class Calendario:
             )
 
         # Cria Tabela
-        df = self.create_table(self.tabelas_feriados)
+        df = self.create_table()
 
         # Tipos
         if tipo == 'date':
@@ -526,26 +542,32 @@ class Calendario:
         return list_feriados
 
     def __repr__(self):
-        df = self.create_table(self.tabelas_feriados)
-        # TODO: Adicionar o ano!
-        feriados = '\n'.join(list(df['name']))
-        return f'Existe(m) {len(df)} feriado(s) listado(s):\n{feriados}'
+        if self.tabelas_feriados == []:
+            return 'Não existem feriados listados'
+
+        else:
+            df = self.create_table()
+            # TODO: Adicionar o ano!
+            feriados = '\n'.join(list(df['name']))
+            return f'Existe(m) {len(df)} feriado(s) listado(s):\n{feriados}'
 
 
 if __name__ == '__main__':
+    import brazilian_holidays
+
+    holidays_23 = brazilian_holidays.Holidays(year=2023)
+    holidays_23.add_all()
+
+    holidays_24 = brazilian_holidays.Holidays(year=2024)
+    holidays_24.add_all()
+
     # Resultados
-    feriados = Holidays(year=2023)
-    feriados.add(name='Natal')
-    feriados.add_all()
+    calendario = brazilian_holidays.Calendario()
+    calendario.add(tabelas_feriados=holidays_23)
+    calendario.add(tabelas_feriados=holidays_24)
+    #print(calendario)
+    #print(calendario.tabelas_feriados)
 
-    # Lista Todos
-    feriados = Holidays(year=2023)
-    feriados.add_all()
-
-    # # Lista
-    lista_feriados = feriados.create_list(tipo='datetime')
-    print(lista_feriados)
-
-    # # Tabela
-    df = feriados.create_table()
-    print(df)
+    # Create Table
+    df = calendario.create_table()
+    print(df.info())

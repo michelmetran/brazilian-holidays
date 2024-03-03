@@ -3,6 +3,7 @@ Setup
 """
 
 from setuptools import find_packages, setup
+from brazilian_holidays import __version__
 
 with open('README.md', 'r', encoding='utf-8') as f:
     long_description = f.read()
@@ -14,8 +15,9 @@ with open('requirements.md', 'r', encoding='utf-8') as f:
         if not li.startswith('#'):
             requirements.append(line.rstrip())
 
-VERSION = (0, 0, 9)
-__version__ = '.'.join(map(str, VERSION))
+#VERSION = (0, 0, 9)
+#__version__ = '.'.join(map(str, VERSION))
+
 
 setup(
     name='brazilian_holidays',

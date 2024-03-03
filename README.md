@@ -44,7 +44,7 @@ pip3 install brazilian-holidays
 
 Para ver a documentação:
 
-- https://brazilian-holidays.readthedocs.io/
+- https://brazilian-holidays.readthedocs.io
 
 <br>
 

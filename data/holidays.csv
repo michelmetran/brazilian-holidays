@@ -1,0 +1,5 @@
+date,dia_semana,name,holiday,type,obs
+2024-03-31,Domingo,Páscoa,True,Móvel,
+2024-04-21,Domingo,Tiradentes,True,Fixo,
+2024-07-09,Terça-feira,Revolução Constitucionalista,True,Fixo,Feriado Estadual
+2024-12-08,Domingo,Imaculada Conceição,True,Fixo,Feriado Municipal de Piracicaba

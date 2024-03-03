@@ -1,23 +1,31 @@
 # dddd
 site_name: Brazilian Holidays
+site_author: Michel Metran
+site_url: https://brazilian-holidays.readthedocs.io/
+copyright: |
+  &copy; 2024 <a href="https://github.com/michelmetran"  target="_blank" rel="noopener">Michel Metran</a>
 
 # GitHub Repo Link
 repo_url: https://github.com/michelmetran/brazilian-holidays
 
-docs_dir: 'docs'
+docs_dir: 'docs' # Default docs
+site_dir: 'site' # Default site
 
 # NavBar
 # Opcional
 nav:
   - Home: index.md
-  - Como Usar?: pages/usar.md
-  - Resultados: pages/results.md
+  - Como Instalar?: pages/install.md
+  - Como Usar?: scripts/01_pacote.ipynb
+  - Meus Feriados: scripts/02_meus_feriados.ipynb
+  - "Calendário: múltiplos anos?": scripts/03_calendario.ipynb
   - Referências: pages/refs.md
-  - Documentation:
-      - Docs: pages/docs.md
-      - Write: pages/write.md
-
-
+  - Pacotes Alternativos:
+      - Holidays: scripts/04_holidays.ipynb
+      - Dateutil: scripts/05_dateutil.ipynb
+  # - Documentation:
+  #     - Docs: pages/docs.md
+  #     - Write: pages/write.md
 
 # Theme
 # Opcional
@@ -25,9 +33,21 @@ nav:
 theme:
   # Breadcrumbs
   features:
-    - navigation.path
+    #- navigation.path
+    - navigation.top
+    #- navigation.tabs
+    - navigation.sections
+    - navigation.instant
+    - navigation.instant.prefetch
+    - search.suggest
+    - search.highlight
     - toc.follow
     #- toc.integrate
+    - content.code.annotation
+    - content.code.copy
+
+
+  language: en
 
   icon:
     repo: fontawesome/brands/github
@@ -69,4 +89,44 @@ markdown_extensions:
           format: !!python/name:pymdownx.superfences.fence_code_format
 
             # Referências
-          # https://github.com/facelessuser/pymdown-extensions/blob/main/docs/src/mkdocs.yml
+            # https://github.com/facelessuser/pymdown-extensions/blob/main/docs/src/mkdocs.yml
+
+  - toc:
+      permalink: true
+      separator: '_'
+
+
+plugins:
+  - social
+  - search
+  - mkdocs-jupyter:
+       ignore_h1_titles: True
+       include_source: True
+       execute: true
+       show_input: True # Default True
+       no_input: False # Default False
+       ignore: ['1*.ipynb']
+       include: ['*.ipynb'] # Default: ["*.py", "*.ipynb"]
+
+
+#      execute_ignore:
+#          - "my-secret-files/*.ipynb"
+#    allow_errors: false
+#    kernel_name: python3
+
+
+
+extra:
+  analytics:
+    provider: google
+    property: G-HSMVSKGX7H
+
+
+extra:
+  social:
+    - icon: fontawesome/brands/github-alt
+      link: https://github.com/michelmetran
+    - icon: fontawesome/brands/linkedin
+      link: https://www.linkedin.com/in/michelmetran/
+    - icon: fontawesome/brands/twitter
+      link: https://twitter.com/michelmetran
