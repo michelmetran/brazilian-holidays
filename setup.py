@@ -15,9 +15,6 @@ with open('requirements.txt', 'r', encoding='utf-8') as f:
         if not li.startswith('#'):
             requirements.append(line.rstrip())
 
-#VERSION = (0, 0, 9)
-#__version__ = '.'.join(map(str, VERSION))
-
 
 setup(
     name='brazilian_holidays',
@@ -41,7 +38,6 @@ setup(
         'Intended Audience :: Developers',
     ],
     # Entry
-
     # Quando são diversos módulos...
     packages=find_packages(),
     # Dados
