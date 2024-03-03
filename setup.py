@@ -9,7 +9,7 @@ with open('README.md', 'r', encoding='utf-8') as f:
     long_description = f.read()
 
 requirements = []
-with open('requirements.md', 'r', encoding='utf-8') as f:
+with open('requirements.txt', 'r', encoding='utf-8') as f:
     for line in f:
         li = line.strip()
         if not li.startswith('#'):
