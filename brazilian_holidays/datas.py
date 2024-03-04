@@ -362,7 +362,11 @@ class Holidays:
         # df = df[pd.notna(df['data'])]
         df = dataframe.sort_values(['date'], ascending=True)
         df['date'] = pd.to_datetime(df['date'])
-        df['dia_semana'] = df['date'].dt.day_name(locale='PT')
+
+        # TODO
+        df['dia_semana'] = df['date'].dt.day_name(locale='pt_BR.utf8')
+
+
         df = df.reset_index(drop=True)
         df = df.rename({'alternative_name': 'name'}, axis=1)
         df = df[['date', 'dia_semana', 'name', 'holiday', 'type', 'obs']]
