@@ -21,6 +21,7 @@ build:
         pre_install:
             # - bash ./scripts/pre_install.sh
             - date
+            - apt-get clean && apt-get update && apt-get install -y locales
             - locale-gen pt_BR.UTF-8
             - update-locale LANG=pt_BR.UTF-8
 
