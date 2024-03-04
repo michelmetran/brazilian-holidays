@@ -13,5 +13,5 @@ mkdocs-material[imaging]
 # ssss
 pandas
 
-# 
-brazilian_holidays
+#
+brazilian-holidays
