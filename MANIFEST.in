@@ -3,6 +3,7 @@
 # Include
 include requirements.txt
 include LICENSE
+include *.md LICENSE requirements.txt CHANGELOG
 
 # Excluí
 #global-exclude __pycache__
