@@ -14,3 +14,6 @@ mkdocs-material[imaging]
 
 # Para executar o código
 brazilian-holidays>=0.1.8
+
+# Pacotes Alternativos
+holidays
