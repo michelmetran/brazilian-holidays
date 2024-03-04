@@ -2,8 +2,8 @@ name: Publish Python to PyPI
 
 on: push
 
-env:
-  LANG: "pt_BR.UTF-8"
+# env:
+#   LANG: 'pt_BR.UTF-8'
 
 jobs:
   build-n-publish:
@@ -12,23 +12,23 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: pt_BR.UTF-8
-        run: |
-          sudo locale-gen pt_BR.UTF-8
-          sudo update-locale LANG=pt_BR.UTF-8
+      # - name: pt_BR.UTF-8
+      #   run: |
+      #     sudo locale-gen pt_BR.UTF-8
+      #     sudo update-locale LANG=pt_BR.UTF-8
 
-      - name: date
-        run: |
-          date
+      # - name: date
+      #   run: |
+      #     date
 
-      - name: Locale
-        run: |
-          locale -a
+      # - name: Locale
+      #   run: |
+      #     locale -a
 
       # https://stackoverflow.com/questions/36394101/pip-install-locale-error-unsupported-locale-setting
-      - name: dsdsd
-        run: |
-          export LC_ALL=C
+      # - name: dsdsd
+      #   run: |
+      #     export LC_ALL=C
 
       - name: Check out repository
         uses: actions/checkout@v4
