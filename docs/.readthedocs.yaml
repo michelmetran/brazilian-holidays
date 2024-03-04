@@ -18,7 +18,8 @@ build:
         pre_create_environment:
             - echo "Command run at 'pre_create_environment' step"
             - locale -a
-            - apt-get update && apt-get install -y locales
+            - sudo apt-get update
+            # - apt-get update && apt-get install -y locales
         pre_install:
             # - bash ./scripts/pre_install.sh
             # apt-get clean &&
