@@ -8,6 +8,11 @@ version: 2
 # Set the OS, Python version and other tools you might need
 build:
     os: ubuntu-22.04
+
+    apt_packages:
+        - cmatrix
+        - locales
+        
     tools:
         python: "3.11"
         # You can also specify other tool versions:
