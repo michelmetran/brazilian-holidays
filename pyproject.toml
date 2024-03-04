@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "brazilian-holidays"
-version = "0.1.5"
+version = "0.1.6"
 description='Brazilian Holidays'
 authors = ["Michel Metran <michelmetran@gmail.com>"]
 readme = "README.md"
@@ -19,7 +19,6 @@ classifiers = [
 [tool.poetry.dependencies]
 python = "^3.10"
 pandas = "2.0.0"
-
 
 [build-system]
 requires = ["poetry-core"]

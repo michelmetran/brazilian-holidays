@@ -8,6 +8,13 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+    # dddd
+    # https://stackoverflow.com/questions/14547631/python-locale-error-unsupported-locale-setting
+    - name: Locales
+      run: >-
+        apt-get install language-pack-pt
+        dpkg-reconfigure locales
+
     - name: Check out repository
       uses: actions/checkout@v4
 
@@ -23,9 +30,7 @@ jobs:
         virtualenvs-in-project: true
         installer-parallel: true
 
-    #----------------------------------------------
-    #       load cached venv if cache exists
-    #----------------------------------------------
+    # load cached venv if cache exists
     - name: Load cached venv
       id: cached-poetry-dependencies
       uses: actions/cache@v3
