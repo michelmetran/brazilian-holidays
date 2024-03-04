@@ -32,7 +32,7 @@ build:
             - locale -a
             #- apt-get update && apt-get install -y locales
             #- sed -i -e "s/# pt_BR.UTF-8 UTF-8/pt_BR.UTF-8 UTF-8/" /etc/locale.gen
-            - dpkg-reconfigure --frontend=noninteractive locales
+            - sudo dpkg-reconfigure --frontend=noninteractive locales
             - locale-gen pt_BR.UTF-8
             - update-locale LANG=pt_BR.UTF-8
             - date

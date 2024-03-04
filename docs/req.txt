@@ -13,7 +13,7 @@ mkdocs-material[imaging]
 # pandas
 
 # Para executar o código
-brazilian-holidays>=0.1.8
+brazilian-holidays>=0.1.15
 
 # Pacotes Alternativos
 holidays
