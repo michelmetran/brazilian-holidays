@@ -29,7 +29,7 @@ setup(
     url='https://github.com/michelmetran/brazilian-holidays',
     keywords='python, dates, holidays, brazil, feriados',
     # Python and Packages
-    python_requires='>=3.10',
+    python_requires='>=3.9',
     install_requires=requirements,
     # Classificação
     classifiers=[
