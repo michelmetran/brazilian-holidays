@@ -47,7 +47,7 @@ theme:
     - content.code.copy
 
 
-  language: en
+  language: pt-BR
 
   icon:
     repo: fontawesome/brands/github
