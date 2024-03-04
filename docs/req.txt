@@ -2,7 +2,6 @@ mkdocs
 pymdown-extensions
 mkdocs-material
 
-
 # Para fazer documentação com auxílio do Jupyter
 # https://github.com/danielfrg/mkdocs-jupyter
 mkdocs-jupyter
@@ -11,7 +10,7 @@ mkdocs-jupyter
 mkdocs-material[imaging]
 
 # ssss
-pandas
+# pandas
 
-#
-brazilian-holidays
+# Para executar o código
+brazilian-holidays>=0.1.8
