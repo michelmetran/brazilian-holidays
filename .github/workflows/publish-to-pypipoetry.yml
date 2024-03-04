@@ -29,7 +29,6 @@ jobs:
       - name: dsdsd
         run: |
           export LC_ALL=C
-          source .bashrc
 
       - name: Check out repository
         uses: actions/checkout@v4
