@@ -21,9 +21,9 @@ build:
         pre_install:
             # - bash ./scripts/pre_install.sh
             - date
-            - sudo locale-gen pt_BR.UTF-8
-            - sudo update-locale LANG=pt_BR.UTF-8
-            
+            - locale-gen pt_BR.UTF-8
+            - update-locale LANG=pt_BR.UTF-8
+
         post_build:
             - echo "Command run at 'post_build' step"
             - echo `date`
