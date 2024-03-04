@@ -12,8 +12,9 @@ jobs:
     # https://stackoverflow.com/questions/14547631/python-locale-error-unsupported-locale-setting
     - name: Locales
       run: >-
-        apt-get install language-pack-pt
-        dpkg-reconfigure locales
+        sudo apt-get update && sudo apt-get install tzdata locales -y
+        sudo apt-get install language-pack-pt
+        sudo dpkg-reconfigure locales
 
     - name: Check out repository
       uses: actions/checkout@v4
