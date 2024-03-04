@@ -21,6 +21,10 @@ jobs:
         run: |
           date
 
+      - name: Locale
+        run: |
+          locale -a
+
       - name: Check out repository
         uses: actions/checkout@v4
 
