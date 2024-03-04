@@ -9,11 +9,8 @@ mkdocs-jupyter
 # Para adicionar icones no footer
 mkdocs-material[imaging]
 
-# ssss
-# pandas
-
 # Para executar o código
 brazilian-holidays>=0.1.15
 
 # Pacotes Alternativos
-holidays
+#holidays==0.43
