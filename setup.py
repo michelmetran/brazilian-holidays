@@ -14,7 +14,7 @@ with open('requirements.txt', 'r', encoding='utf-8') as f:
         li = line.strip()
         if not li.startswith('#'):
             requirements.append(line.rstrip())
-            print('6666' *100)
+            print('6666' * 100)
             print(requirements)
 
 
