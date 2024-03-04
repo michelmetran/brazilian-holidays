@@ -33,8 +33,8 @@ build:
             #- apt-get update && apt-get install -y locales
             #- sed -i -e "s/# pt_BR.UTF-8 UTF-8/pt_BR.UTF-8 UTF-8/" /etc/locale.gen
             #- dpkg-reconfigure --frontend=noninteractive locales
-            - locale-gen pt_BR.UTF-8
-            - update-locale LANG=pt_BR.UTF-8
+            #- locale-gen pt_BR.UTF-8
+            #- update-locale LANG=pt_BR.UTF-8
             - date
 
         post_build:
@@ -59,4 +59,4 @@ formats:
 # See https://docs.readthedocs.io/en/stable/guides/reproducible-builds.html
 python:
     install:
-        - requirements: docs/req.txt
+        - requirements: docs/requirements.txt.txt
