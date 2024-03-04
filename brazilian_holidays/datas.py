@@ -340,6 +340,7 @@ class Holidays:
         return feriado_del['date']
 
     def create_table(self):
+        
         """
         Cria uma tabela de Feriados, em formato "pandas",
         contendo os feriados adicionados individualmente,
@@ -365,7 +366,6 @@ class Holidays:
 
         # TODO
         df['dia_semana'] = df['date'].dt.day_name(locale='pt_BR.utf8')
-
 
         df = df.reset_index(drop=True)
         df = df.rename({'alternative_name': 'name'}, axis=1)
