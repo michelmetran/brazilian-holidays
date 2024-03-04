@@ -43,3 +43,13 @@ jobs:
       uses: pypa/gh-action-pypi-publish@release/v1
       with:
         password: ${{ secrets.PYPI_API_TOKEN }}
+
+
+
+    # dddd
+    # https://stackoverflow.com/questions/14547631/python-locale-error-unsupported-locale-setting
+    - name: Locales
+      run: >-
+        sudo apt-get update && sudo apt-get install tzdata locales -y
+        # sudo apt-get install language-pack-pt
+        # sudo dpkg-reconfigure locales
