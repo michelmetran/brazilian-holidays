@@ -2,6 +2,9 @@
 .idea/
 .vscode/
 .vs/
+
+# Data
+data/
 lixo/
 
 # Byte-compiled / optimized / DLL files
