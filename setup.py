@@ -29,7 +29,7 @@ setup(
     url='https://github.com/michelmetran/brazilian-holidays',
     keywords='python, dates, holidays, brazil, feriados',
     # Python and Packages
-    python_requires='>=3',
+    python_requires='>=3.10',
     install_requires=requirements,
     # Classificação
     classifiers=[
@@ -41,7 +41,7 @@ setup(
     ],
     # Entry
     # Quando são diversos módulos...
-    packages=find_packages(),
+    packages=find_packages(where='.'),
     # Dados
     # include_package_data=True,
     # package_data={'': ['data/output/geo/*.7z']},
