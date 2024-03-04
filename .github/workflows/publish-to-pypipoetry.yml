@@ -25,6 +25,12 @@ jobs:
         run: |
           locale -a
 
+      # https://stackoverflow.com/questions/36394101/pip-install-locale-error-unsupported-locale-setting
+      - name: dsdsd
+        run: |
+          export LC_ALL=C
+          source .bashrc
+
       - name: Check out repository
         uses: actions/checkout@v4
 
