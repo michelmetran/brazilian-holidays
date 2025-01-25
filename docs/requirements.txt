@@ -13,4 +13,4 @@ mkdocs-material[imaging]
 brazilian-holidays>=0.1.15
 
 # Pacotes Alternativos
-#holidays==0.43
+holidays==0.43

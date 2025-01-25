@@ -1,7 +1,7 @@
 [tool.poetry]
 name = "brazilian-holidays"
-version = "0.1.19"
-description='Brazilian Holidays'
+version = "0.1.20"
+description = 'Brazilian Holidays'
 authors = ["Michel Metran <michelmetran@gmail.com>"]
 readme = "README.md"
 license = "MIT"
