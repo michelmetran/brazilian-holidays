@@ -6,7 +6,7 @@ pip3 install -U brazilian-holidays
 
 <br>
 
-Para desistanlar...
+Para desinstalar...
 
 ```shell
 pip3 uninstall brazilian-holidays

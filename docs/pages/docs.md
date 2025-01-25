@@ -2,10 +2,7 @@
 
 ## MkDocs
 
-
 For full documentation visit [mkdocs.org](https://www.mkdocs.org).
-
-sdfdsfdsfdsf
 
 ## Commands
 
@@ -16,7 +13,6 @@ sdfdsfdsfdsf
 
 <br>
 
-
 ## Project layout
 
     mkdocs.yml    # The configuration file.
@@ -24,30 +20,20 @@ sdfdsfdsfdsf
         index.md  # The documentation homepage.
         ...       # Other markdown pages, images and other files.
 
-
 <br>
 
 ------
 
-
-
-
-
 ## Read the Docs
 
-It's necessary indicate the path of the file `.readthedocs.yml` in the advanced configurations.
+It's necessary indicate the path of the file `.readthedocs.yml` in the advanced
+configurations.
 
 ![readthedocs](https://i.imgur.com/f60yZU6.jpeg)
 
 <br>
 
-And it's necessary adjust the *Automation Rules*.  
+And it's necessary adjust the *Automation Rules*.
 
 ![automation](https://i.imgur.com/NlC0TLt.jpeg)
-
-
-
-<br>
-
-
 
