@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "brazilian-holidays2"
+name = "brazilian-holidays"
 version = "0.1.20"
 description = 'Brazilian Holidays'
 authors = ["Michel Metran <michelmetran@gmail.com>"]
