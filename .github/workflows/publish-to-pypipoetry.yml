@@ -38,6 +38,7 @@ jobs:
         with:
           python-version: '3.10'
 
+      # https://github.com/snok/install-poetry
       - name: Install Poetry
         uses: snok/install-poetry@v1
         with:
