@@ -9,7 +9,7 @@
 
 
 
-> _Adoro um feriado! Quem não gosta?!_
+> _Adoro um feriado! Quem não gosta?_
 
 Com objetivo de listar os feriados brasileiros, criei o pacote \*
 \*feriados-brasileiros\*\*, que permite criar uma tabela
