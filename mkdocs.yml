@@ -3,13 +3,13 @@ site_name: Brazilian Holidays
 site_author: Michel Metran
 site_url: https://brazilian-holidays.readthedocs.io/
 copyright: |
-  &copy; 2024 <a href="https://github.com/michelmetran"  target="_blank" rel="noopener">Michel Metran</a>
+  &copy; 2025 <a href="https://github.com/michelmetran"  target="_blank" rel="noopener">Michel Metran</a>
 
 # GitHub Repo Link
 repo_url: https://github.com/michelmetran/brazilian-holidays
 
-docs_dir: 'docs' # Default docs
-site_dir: 'site' # Default site
+docs_dir: "docs" # Default docs
+site_dir: "site" # Default site
 
 # NavBar
 # Opcional
@@ -46,7 +46,6 @@ theme:
     - content.code.annotation
     - content.code.copy
 
-
   language: pt-BR
 
   icon:
@@ -74,27 +73,25 @@ theme:
         icon: material/brightness-4
         name: Switch to system preference
 
-
 # https://facelessuser.github.io/pymdown-extensions/
 markdown_extensions:
   - pymdownx.emoji # Suporte a emojis
   - pymdownx.tasklist # Suporte à tarefas
   - pymdownx.mark # Marcado
-  - pymdownx.tilde  # Realçado
-  - pymdownx.highlight  # Código
+  - pymdownx.tilde # Realçado
+  - pymdownx.highlight # Código
   - pymdownx.superfences:
       custom_fences:
         - name: mermaid
           class: mermaid
           format: !!python/name:pymdownx.superfences.fence_code_format
-
             # Referências
             # https://github.com/facelessuser/pymdown-extensions/blob/main/docs/src/mkdocs.yml
 
+
   - toc:
       permalink: true
-      separator: '_'
-
+      separator: "_"
 
 plugins:
   - social
@@ -105,24 +102,19 @@ plugins:
       execute: true
       show_input: True # Default True
       no_input: False # Default False
-      ignore: [ '1*.ipynb' ]
-      include: [ '*.ipynb' ] # Default: ["*.py", "*.ipynb"]
-
+      ignore: ["1*.ipynb"]
+      include: ["*.ipynb"] # Default: ["*.py", "*.ipynb"]
 
 #      execute_ignore:
 #          - "my-secret-files/*.ipynb"
 #    allow_errors: false
 #    kernel_name: python3
 
-
-
 extra:
   analytics:
     provider: google
     property: G-HSMVSKGX7H
 
-
-extra:
   social:
     - icon: fontawesome/brands/github-alt
       link: https://github.com/michelmetran
