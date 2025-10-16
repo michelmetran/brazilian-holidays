@@ -22,6 +22,7 @@ dev = [
     "notebook>=7.4.7",
 ]
 docs = [
+    "mkdocs>=1.6.1",
     # https://pypi.org/project/mkdocs-jupyter/
     "mkdocs-jupyter>=0.25.1",
     # https://pypi.org/project/mkdocs-material/

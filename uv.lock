@@ -168,7 +168,7 @@ css = [
 
 [[package]]
 name = "brazilian-holidays"
-version = "0.1.21"
+version = "0.1.24"
 source = { virtual = "." }
 dependencies = [
     { name = "holidays" },
@@ -181,6 +181,7 @@ dev = [
     { name = "notebook" },
 ]
 docs = [
+    { name = "mkdocs" },
     { name = "mkdocs-jupyter" },
     { name = "mkdocs-material", extra = ["imaging"] },
 ]
@@ -188,13 +189,14 @@ docs = [
 [package.metadata]
 requires-dist = [
     { name = "holidays", specifier = ">=0.82" },
-    { name = "pandas", specifier = ">=2.3.3" },
+    { name = "pandas", specifier = ">=2.2.2" },
     { name = "tabulate", specifier = ">=0.9.0" },
 ]
 
 [package.metadata.requires-dev]
 dev = [{ name = "notebook", specifier = ">=7.4.7" }]
 docs = [
+    { name = "mkdocs", specifier = ">=1.6.1" },
     { name = "mkdocs-jupyter", specifier = ">=0.25.1" },
     { name = "mkdocs-material", extras = ["imaging"], specifier = ">=9.6.22" },
 ]
