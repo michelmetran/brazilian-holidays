@@ -1,4 +1,4 @@
-# dddd
+# Basic
 site_name: Brazilian Holidays
 site_author: Michel Metran
 site_url: https://brazilian-holidays.readthedocs.io/
@@ -100,13 +100,13 @@ plugins:
   - social
   - search
   - mkdocs-jupyter:
-       ignore_h1_titles: True
-       include_source: True
-       execute: true
-       show_input: True # Default True
-       no_input: False # Default False
-       ignore: ['1*.ipynb']
-       include: ['*.ipynb'] # Default: ["*.py", "*.ipynb"]
+      ignore_h1_titles: True
+      include_source: True
+      execute: true
+      show_input: True # Default True
+      no_input: False # Default False
+      ignore: [ '1*.ipynb' ]
+      include: [ '*.ipynb' ] # Default: ["*.py", "*.ipynb"]
 
 
 #      execute_ignore:

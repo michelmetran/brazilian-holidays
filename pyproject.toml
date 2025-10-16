@@ -1,6 +1,6 @@
-[tool.poetry]
+[project]
 name = "brazilian-holidays"
-version = "0.1.20"
+version = "0.1.21"
 description = 'Brazilian Holidays'
 authors = ["Michel Metran <michelmetran@gmail.com>"]
 readme = "README.md"
@@ -15,27 +15,18 @@ classifiers = [
     'Natural Language :: Portuguese',
     'Intended Audience :: Developers',
 ]
+requires-python = ">=3.11"
+dependencies = [
+    "holidays>=0.82",
+    "pandas>=2.3.3",
+    "tabulate>=0.9.0",
+]
 
-[tool.poetry.dependencies]
-python = "^3.10"
-pandas = ">=1.5.0"
-
-[build-system]
-requires = ["poetry-core"]
-build-backend = "poetry.core.masonry.api"
-
-[tool.poetry.group.docs]
-optional = true
-
-[tool.poetry.group.docs.dependencies]
-myst-parser = ">=0.16"
-sphinx = ">=4.0"
-sphinx-autobuild = ">=2021.0"
-sphinx-rtd-theme = ">=1.0"
-mkdocs = ">=1.6.1"
-pymdown-extensions = ">=10.14.1"
-mkdocs-material = ">=9.6.9"
-mkdocs-jupyter = ">=0.25.1"
-#mkdocs-material[imaging] = ">=9.6.9"
-holidays = ">=0.43"
-#brazilian-holidays = ">=0.1.15"
+[dependency-groups]
+dev = [
+    "notebook>=7.4.7",
+]
+docs = [
+    "mkdocs-jupyter>=0.25.1",
+    "mkdocs-material[imaging]>=9.6.22",
+]

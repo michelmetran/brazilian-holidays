@@ -340,7 +340,6 @@ class Holidays:
         return feriado_del['date']
 
     def create_table(self):
-        
         """
         Cria uma tabela de Feriados, em formato "pandas",
         contendo os feriados adicionados individualmente,
