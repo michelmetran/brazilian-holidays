@@ -27,10 +27,14 @@ build:
   jobs:
     pre_create_environment:
       - echo "Command run at 'pre_create_environment' step"
-      - locale -a
-      - sed -i 's/# pt_BR.UTF-8 UTF-8/pt_BR.UTF-8 UTF-8/g' /etc/locale.gen
-      - echo 'LANG=pt_BR.UTF-8' > /etc/default/locale
-      - locale-gen
+      # SOLUÇÃO: Exporte as variáveis de ambiente diretamente!
+      - export LANG=pt_BR.UTF-8
+      - export LC_ALL=pt_BR.UTF-8
+      - echo "Locale configurado para $LANG"
+      - locale -a # Para verificar se o pt_BR.utf8 está na lista de disponíveis
+      # - sed -i 's/# pt_BR.UTF-8 UTF-8/pt_BR.UTF-8 UTF-8/g' /etc/locale.gen
+      # - echo 'LANG=pt_BR.UTF-8' > /etc/default/locale
+      # - locale-gen
       #- sudo apt-get update
       # - apt-get update && apt-get install -y locales
     pre_install:
