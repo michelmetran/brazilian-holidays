@@ -2,11 +2,11 @@
 name = "brazilian-holidays"
 version = "0.1.21"
 description = 'Brazilian Holidays'
-authors = ["Michel Metran <michelmetran@gmail.com>"]
+authors = [{ name = "Michel Metran", email = "michelmetran@gmail.com" }]
 readme = "README.md"
 license = "MIT"
-documentation = "https://brazilian-holidays.readthedocs.io"
-repository = "https://github.com/michelmetran/brazilian-holidays"
+
+
 keywords = ["holidays", "feriados", "brazilian"]
 classifiers = [
     'Programming Language :: Python :: 3',
@@ -16,17 +16,15 @@ classifiers = [
     'Intended Audience :: Developers',
 ]
 requires-python = ">=3.11"
-dependencies = [
-    "holidays>=0.82",
-    "pandas>=2.3.3",
-    "tabulate>=0.9.0",
-]
+dependencies = ["holidays>=0.82", "pandas>=2.3.3", "tabulate>=0.9.0"]
 
 [dependency-groups]
-dev = [
-    "notebook>=7.4.7",
-]
-docs = [
-    "mkdocs-jupyter>=0.25.1",
-    "mkdocs-material[imaging]>=9.6.22",
-]
+dev = ["notebook>=7.4.7"]
+docs = ["mkdocs-jupyter>=0.25.1", "mkdocs-material[imaging]>=9.6.22"]
+
+
+[project.urls]
+Homepage = "https://github.com/michelmetran/brazilian-holidays"
+Issues = "https://github.com/michelmetran/brazilian-holidays/issues"
+Repository = "https://github.com/michelmetran/brazilian-holidays"
+Documentation = "https://brazilian-holidays.readthedocs.io"
