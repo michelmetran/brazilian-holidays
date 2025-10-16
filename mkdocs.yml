@@ -52,6 +52,7 @@ theme:
     repo: fontawesome/brands/github
 
   name: material
+  custom_dir: docs/overrides
   palette:
     # Palette toggle for automatic mode
     - media: "(prefers-color-scheme)"
