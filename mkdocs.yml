@@ -99,7 +99,7 @@ plugins:
   - mkdocs-jupyter:
       ignore_h1_titles: True
       include_source: True
-      execute: true
+      execute: false
       show_input: True # Default True
       no_input: False # Default False
       ignore: ["1*.ipynb"]
