@@ -1,20 +1,20 @@
 [project]
 name = "brazilian-holidays"
-version = "0.1.22"
+version = "0.1.23"
 description = 'Brazilian Holidays'
 authors = [{ name = "Michel Metran", email = "michelmetran@gmail.com" }]
+keywords = ["holidays", "feriados", "brazilian"]
 readme = "README.md"
 license = "MIT"
 
 
-keywords = ["holidays", "feriados", "brazilian"]
-classifiers = [
-    'Programming Language :: Python :: 3',
-    'License :: OSI Approved :: MIT License',
-    'Operating System :: OS Independent',
-    'Natural Language :: Portuguese',
-    'Intended Audience :: Developers',
-]
+# classifiers = [
+#     'Programming Language :: Python :: 3',
+#     'License :: OSI Approved :: MIT License',
+#     'Operating System :: OS Independent',
+#     'Natural Language :: Portuguese',
+#     'Intended Audience :: Developers',
+# ]
 requires-python = ">=3.11"
 dependencies = ["holidays>=0.82", "pandas>=2.3.3", "tabulate>=0.9.0"]
 
