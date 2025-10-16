@@ -1,0 +1,109 @@
+name: Publish Python to PyPI
+
+on: push
+
+# env:
+#   LANG: 'pt_BR.UTF-8'
+
+# env:
+#   CPLUS_INCLUDE_PATH: /usr/include/gdal
+#   C_INCLUDE_PATH: /usr/include/gdal
+
+jobs:
+  build-n-publish:
+    name: Build and Publish Python Poetry🐍 distributions 📦 to PyPI
+
+    runs-on: ubuntu-latest
+
+    steps:
+      # - name: pt_BR.UTF-8
+      #   run: |
+      #     sudo locale-gen pt_BR.UTF-8
+      #     sudo update-locale LANG=pt_BR.UTF-8
+
+      # - name: date
+      #   run: |
+      #     date
+
+      # - name: Locale
+      #   run: |
+      #     locale -a
+
+      # https://stackoverflow.com/questions/36394101/pip-install-locale-error-unsupported-locale-setting
+      # - name: dsdsd
+      #   run: |
+      #     export LC_ALL=C
+
+      # Adiciona repositório
+      # - name: Adiciona repositório
+      #   run: |
+      #     sudo add-apt-repository ppa:ubuntugis/ubuntugis-unstable
+      #     #sudo add-apt-repository ppa:ubuntugis/ubuntugis-experimental
+      #     sudo apt update
+
+      # # Instala GDAL e dependências do sistema
+      # - name: Install GDAL system dependencies
+      #   run: |
+      #     sudo apt-get install -y gdal-bin libgdal-dev python3-gdal g++
+      #     # pip install GDAL==3.11.3
+
+      # # Versão do GDAL
+      # - name: Versão do GDAL
+      #   run: |
+      #     # python3 -c "from osgeo import gdal; print(gdal.version)"
+      #     gdal-config --version
+      #     ogrinfo --version
+
+      # https://github.com/actions/checkout
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      # https://github.com/astral-sh/setup-uv
+      - name: Install uv
+        uses: astral-sh/setup-uv@v5
+
+      # https://github.com/actions/setup-python
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          # python-version-file: '.python-version'
+
+      - name: Lock UV dependencies
+        run: uv lock
+
+      - name: Install the project
+        run: uv sync --locked --all-extras --dev
+
+      - name: Build
+        run: uv build
+
+      - name: Publish
+        run: uv publish -t ${{ secrets.PYPI_API_TOKEN }}
+
+      # For example, using `pytest`
+      # - name: Run tests
+      #   run: uv run pytest tests
+
+      # # load cached venv if cache exists
+      # - name: Load cached venv
+      #   id: cached-poetry-dependencies
+      #   uses: actions/cache@v4
+      #   with:
+      #     path: .venv
+      #     key: venv-${{ runner.os }}-${{ steps.setup-python.outputs.python-version }}-${{ hashFiles('**/poetry.lock') }}
+
+      # install dependencies if cache does not exist
+      # - name: Install dependencies
+      #   if: steps.cached-poetry-dependencies.outputs.cache-hit != 'true'
+      #   run: poetry install --no-interaction --no-root --with docs
+
+      # # install your root project, if required
+      # - name: Install project
+      #   run: poetry install --no-interaction
+
+      # - name: Set PyPI
+      #   run: poetry config pypi-token.pypi "${{ secrets.PYPI_API_TOKEN }}"
+
+      # - name: Publish package
+      #   run: poetry publish --build

@@ -1,6 +1,6 @@
 [project]
 name = "brazilian-holidays"
-version = "0.1.21"
+version = "0.1.22"
 description = 'Brazilian Holidays'
 authors = [{ name = "Michel Metran", email = "michelmetran@gmail.com" }]
 readme = "README.md"

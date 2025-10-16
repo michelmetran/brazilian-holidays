@@ -5,41 +5,60 @@
 # Required
 version: 2
 
+# Optionally build your docs in additional formats such as PDF and ePub
+formats:
+  - pdf
+  - epub
+
 # Set the OS, Python version and other tools you might need
 build:
-    os: ubuntu-22.04
+  os: ubuntu-24.04
 
-    # https://dev.readthedocs.io/en/latest/design/system-packages.html
-    apt_packages:
-        - locales
+  # https://dev.readthedocs.io/en/latest/design/system-packages.html
+  apt_packages:
+    - locales
 
-    tools:
-        python: "3.11"
-        # You can also specify other tool versions:
-        # nodejs: "19"
-        # rust: "1.64"
-        # golang: "1.19"
-    jobs:
-        pre_create_environment:
-            - echo "Command run at 'pre_create_environment' step"
-            - locale -a
-            #- sudo apt-get update
-            # - apt-get update && apt-get install -y locales
-        pre_install:
-            # - bash ./scripts/pre_install.sh
-            # apt-get clean &&
-            - date
-            - locale -a
-            #- apt-get update && apt-get install -y locales
-            #- sed -i -e "s/# pt_BR.UTF-8 UTF-8/pt_BR.UTF-8 UTF-8/" /etc/locale.gen
-            #- dpkg-reconfigure --frontend=noninteractive locales
-            #- locale-gen pt_BR.UTF-8
-            #- update-locale LANG=pt_BR.UTF-8
-            - date
+  tools:
+    python: "3.11"
+    # You can also specify other tool versions:
+    # nodejs: "19"
+    # rust: "1.64"
+    # golang: "1.19"
+  jobs:
+    pre_create_environment:
+      - echo "Command run at 'pre_create_environment' step"
+      - locale -a
+      - sed -i 's/# pt_BR.UTF-8 UTF-8/pt_BR.UTF-8 UTF-8/g' /etc/locale.gen
+      - echo 'LANG=pt_BR.UTF-8' > /etc/default/locale
+      - locale-gen
+      #- sudo apt-get update
+      # - apt-get update && apt-get install -y locales
+    pre_install:
+      # - bash ./scripts/pre_install.sh
+      # apt-get clean &&
+      - date
+      - locale -a
+      #- apt-get update && apt-get install -y locales
+      #- sed -i -e "s/# pt_BR.UTF-8 UTF-8/pt_BR.UTF-8 UTF-8/" /etc/locale.gen
+      #- dpkg-reconfigure --frontend=noninteractive locales
+      #- locale-gen pt_BR.UTF-8
+      #- update-locale LANG=pt_BR.UTF-8
+      - date
 
-        post_build:
-            - echo "Command run at 'post_build' step"
-            - echo `date`
+    post_build:
+      - echo "Command run at 'post_build' step"
+      - echo `date`
+
+    post_install:
+      # Install dependencies
+      #- poetry install --with docs
+      # https://github.com/readthedocs/readthedocs.org/issues/4912#issuecomment-1992286540
+      # - VIRTUAL_ENV=$READTHEDOCS_VIRTUALENV_PATH poetry install --with docs
+      #- echo ${TJSP_MNI_USERNAME}
+
+      # https://github.com/astral-sh/uv/issues/10074
+      - pip install uv
+      - UV_PROJECT_ENVIRONMENT=$READTHEDOCS_VIRTUALENV_PATH uv sync --all-extras --group docs --link-mode=copy
 
 # Build documentation in the "docs/" directory with Sphinx
 #sphinx:
@@ -47,16 +66,10 @@ build:
 
 # Build documentation in the "docs/" directory with MkDocs
 mkdocs:
-    configuration: mkdocs.yml
-
-# Optionally build your docs in additional formats such as PDF and ePub
-formats:
-    - pdf
-    - epub
-
+  configuration: mkdocs.yml
 # Optional but recommended, declare the Python requirements required
 # to build your documentation
 # See https://docs.readthedocs.io/en/stable/guides/reproducible-builds.html
-python:
-    install:
-        -   requirements: docs/requirements.txt
+# python:
+#   install:
+#     - requirements: docs/requirements.txt
