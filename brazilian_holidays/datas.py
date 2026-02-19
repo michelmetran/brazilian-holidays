@@ -5,6 +5,7 @@ Feriados do Brasil
 from datetime import date, datetime, timedelta
 
 import pandas as pd
+from babel import Locale
 
 
 class Holidays:
@@ -30,7 +31,7 @@ class Holidays:
         dt_carnaval_qua = date.fromordinal(dt_carnaval_ter.toordinal() + 1)
         dt_paixao_cristo = date.fromordinal(dt_pascoa.toordinal() - 2)
         dt_endoencas = date.fromordinal(dt_paixao_cristo.toordinal() - 1)
-        dt_corpus_christ = date.fromordinal(dt_pascoa.toordinal() + 60)
+        dt_corpus_christi = date.fromordinal(dt_pascoa.toordinal() + 60)
         dt_dom_ramos = date.fromordinal(dt_pascoa.toordinal() - 7)
 
         # dddd
@@ -85,8 +86,8 @@ class Holidays:
                 'type': 'Móvel',
                 'obs': '',
             },
-            'Corpus Christ': {
-                'date': dt_corpus_christ,
+            'Corpus Christi': {
+                'date': dt_corpus_christi,
                 'alternative_name': None,
                 'holiday': True,
                 'type': 'Móvel',
@@ -357,14 +358,17 @@ class Holidays:
             raise Warning('Necessário Adicionar feriados!')
 
         dataframe = pd.DataFrame.from_dict(
-            self.dict_feriados_solicitados, orient='index'
+            self.dict_feriados_solicitados,
+            orient='index',
         )
         # df = df[pd.notna(df['data'])]
         df = dataframe.sort_values(['date'], ascending=True)
         df['date'] = pd.to_datetime(df['date'])
 
         # TODO
-        df['dia_semana'] = df['date'].dt.day_name(locale='pt_BR.utf8')
+        locale = Locale('pt_BR')
+        day_names = locale.days['format']['wide']
+        df['dia_semana'] = df['date'].dt.weekday.map(day_names)
 
         df = df.reset_index(drop=True)
         df = df.rename({'alternative_name': 'name'}, axis=1)

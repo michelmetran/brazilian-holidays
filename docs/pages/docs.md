@@ -6,10 +6,10 @@ For full documentation visit [mkdocs.org](https://www.mkdocs.org).
 
 ## Commands
 
-* `mkdocs new [dir-name]` - Create a new project.
-* `mkdocs serve` - Start the live-reloading docs server.
-* `mkdocs build` - Build the documentation site.
-* `mkdocs -h` - Print help message and exit.
+- `mkdocs new [dir-name]` - Create a new project.
+- `mkdocs serve` - Start the live-reloading docs server.
+- `mkdocs build` - Build the documentation site.
+- `mkdocs -h` - Print help message and exit.
 
 <br>
 
@@ -22,7 +22,7 @@ For full documentation visit [mkdocs.org](https://www.mkdocs.org).
 
 <br>
 
-------
+---
 
 ## Read the Docs
 
@@ -33,7 +33,6 @@ configurations.
 
 <br>
 
-And it's necessary adjust the *Automation Rules*.
+And it's necessary adjust the _Automation Rules_.
 
 ![automation](https://i.imgur.com/NlC0TLt.jpeg)
-
